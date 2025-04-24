@@ -1,0 +1,44 @@
+{
+  "name": "mpg-be",
+  "version": "1.0.0",
+  "description": "Backend to Meal Plan Generator Web App",
+  "main": "listen.js",
+  "scripts": {
+    "test": "jest",
+    "setup-dbs": "psql -f ./db/setup.sql",
+    "seed": "node ./db/seeds/run-seed.js",
+    "seed-prod": "NODE_ENV=production npm run seed",
+    "start": "node listen.js",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottgirling/mpg-be.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scottgirling/mpg-be/issues"
+  },
+  "homepage": "https://github.com/scottgirling/mpg-be#readme",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "jest-extended": "^4.0.2",
+    "jest-sorted": "^1.0.15",
+    "pg-format": "^1.0.4",
+    "supertest": "^7.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "pg": "^8.15.5"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "jest-extended/all",
+      "jest-sorted"
+    ]
+  }
+}

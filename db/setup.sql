@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS mpg_test;
+DROP TABLE IF EXISTS mpg;
+
+CREATE TABLE mpg_test;
+CREATE TABLE mpg;
