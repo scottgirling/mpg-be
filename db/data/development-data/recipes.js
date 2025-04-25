@@ -49,7 +49,7 @@ module.exports = [
     "votes": 0,
     "servings": 1,
     "tags": ["Breakfast", "Quick", "Healthy"],
-    "created_by": "toast_lover",
+    "created_by": "bake_master",
     "created_at": "2025-04-20T08:00:00Z",
     "recipe_img_url": "https://example.com/images/avocado-toast.jpg",
     "difficulty": 1
