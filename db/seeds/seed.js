@@ -10,21 +10,20 @@ const seed = ({ tagData, userData, recipeData }) => {
         return db.query(`DROP TABLE IF EXISTS tags;`);
     })
     .then(() => {
-        const tagsTablePromise = db.query(`
+        return db.query(`
             CREATE TABLE tags (
             slug VARCHAR PRIMARY KEY
         );`)
-
-        const usersTablePromise = db.query(`
+    })
+    .then(() => {
+        return db.query(`
             CREATE TABLE users (
             username VARCHAR PRIMARY KEY,
             name VARCHAR NOT NULL,
             avatar_url VARCHAR,
-            meal_plans TEXT[][],
+            meal_plans JSONB,
             favourite_meals TEXT[]
         );`)
-
-        return Promise.all([tagsTablePromise, usersTablePromise]);
     })
     .then(() => {
         return db.query(`CREATE TABLE recipes (
@@ -41,28 +40,19 @@ const seed = ({ tagData, userData, recipeData }) => {
             created_at TIMESTAMP DEFAULT NOW(),
             recipe_img_url VARCHAR,
             difficulty INT NOT NULL
-            );`)
+        );`)
     })
     .then(() => {
         const insertTagsQueryStr = format(
             `INSERT INTO tags (slug) VALUES %L;`, tagData.map(({ slug }) => [slug])
         );
-        // const tagsPromise = db.query(insertTagsQueryStr);
 
         return db.query(insertTagsQueryStr);
-
-
-        // const insertUsersQueryStr = format(
-        //     `INSERT INTO users (username, name, avatar_url, meal_plans, favourite_meals) VALUES %L;`, userData.map(({ username, name, avatar_url, meal_plans, favourite_meals}) => [username, name, avatar_url, meal_plans, favourite_meals])
-        // );
-        // const usersPromise = db.query(insertUsersQueryStr);
-
-        // return Promise.all([tagsPromise, usersPromise]);
     })
     .then(() => {
         const insertUsersQueryStr = format(
             `INSERT INTO users (username, name, avatar_url, meal_plans, favourite_meals) VALUES %L;`, 
-            userData.map(({ username, name, avatar_url, meal_plans, favourite_meals }) => [username, name, avatar_url, (`{${meal_plans}}`), (`{${favourite_meals}}`)])
+            userData.map(({ username, name, avatar_url, meal_plans, favourite_meals }) => [username, name, avatar_url, (`${JSON.stringify(meal_plans)}`), (`{${favourite_meals}}`)])
         );
         return db.query(insertUsersQueryStr);
     })

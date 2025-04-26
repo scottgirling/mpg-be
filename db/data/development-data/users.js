@@ -79,7 +79,7 @@ module.exports = [
 		]
 	},
 	{
-		"username": "quickcook123",
+		"username": "tofu_tamer",
 		"name": "Lisa Green",
 		"avatar_url": "https://picsum.photos/200?random=5",
 		"meal_plans": [
@@ -98,7 +98,7 @@ module.exports = [
 		]
 	},
 	{
-		"username": "cookie_queen",
+		"username": "cookie_monsta",
 		"name": "Emily Brown",
 		"avatar_url": "https://picsum.photos/200?random=6",
 		"meal_plans": [
@@ -117,7 +117,7 @@ module.exports = [
 		]
 	},
 	{
-		"username": "vegan_vibes",
+		"username": "smoke_stack",
 		"name": "Ava Johnson",
 		"avatar_url": "https://picsum.photos/200?random=7",
 		"meal_plans": [
@@ -134,7 +134,7 @@ module.exports = [
 		"favourite_meals": []
 	},
 	{
-		"username": "smoothie_lover",
+		"username": "smoothie_supreme",
 		"name": "Grace Lee",
 		"avatar_url": "https://picsum.photos/200?random=8",
 		"meal_plans": [

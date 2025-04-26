@@ -79,7 +79,7 @@ module.exports = [
     "votes": 0,
     "servings": 4,
     "tags": ["Russian", "Dinner", "Comfort Food"],
-    "created_by": "homecook_ben",
+    "created_by": "alfredo_chef",
     "created_at": "2025-04-19T17:30:00Z",
     "recipe_img_url": "https://example.com/images/beef-stroganoff.jpg",
     "difficulty": 3
@@ -103,7 +103,7 @@ module.exports = [
     "votes": 0,
     "servings": 2,
     "tags": ["Lunch", "Wrap", "Quick"],
-    "created_by": "wrap_wizard",
+    "created_by": "taco_lord",
     "created_at": "2025-04-18T12:00:00Z",
     "recipe_img_url": "https://example.com/images/caesar-wrap.jpg",
     "difficulty": 2
@@ -128,7 +128,7 @@ module.exports = [
     "votes": 0,
     "servings": 4,
     "tags": ["Dip", "Vegan", "Mediterranean"],
-    "created_by": "meze_maker",
+    "created_by": "pasta_pro",
     "created_at": "2025-04-18T09:15:00Z",
     "recipe_img_url": "https://example.com/images/hummus.jpg",
     "difficulty": 1
@@ -154,7 +154,7 @@ module.exports = [
     "votes": 0,
     "servings": 2,
     "tags": ["Pizza", "Vegetarian", "Italian"],
-    "created_by": "pizzaiolo_joe",
+    "created_by": "pasta_chef",
     "created_at": "2025-04-17T18:45:00Z",
     "recipe_img_url": "https://example.com/images/margarita-pizza.jpg",
     "difficulty": 3
@@ -180,7 +180,7 @@ module.exports = [
     "votes": 0,
     "servings": 2,
     "tags": ["Japanese", "Dinner", "Saucy"],
-    "created_by": "sauce_sensei",
+    "created_by": "cauliflower_connoisseur",
     "created_at": "2025-04-17T11:30:00Z",
     "recipe_img_url": "https://example.com/images/teriyaki-chicken.jpg",
     "difficulty": 2
@@ -202,7 +202,7 @@ module.exports = [
     "votes": 0,
     "servings": 1,
     "tags": ["Snack", "Comfort Food", "Quick"],
-    "created_by": "melt_master",
+    "created_by": "egg_expert",
     "created_at": "2025-04-16T14:00:00Z",
     "recipe_img_url": "https://example.com/images/grilled-cheese.jpg",
     "difficulty": 1
@@ -229,7 +229,7 @@ module.exports = [
     "votes": 0,
     "servings": 4,
     "tags": ["Soup", "Vegetarian", "Classic"],
-    "created_by": "soup_queen",
+    "created_by": "soup_sculptor",
     "created_at": "2025-04-16T10:00:00Z",
     "recipe_img_url": "https://example.com/images/tomato-soup.jpg",
     "difficulty": 2
@@ -283,7 +283,7 @@ module.exports = [
     "votes": 0,
     "servings": 2,
     "tags": ["Seafood", "Healthy", "Quick"],
-    "created_by": "fish_fanatic",
+    "created_by": "bake_master",
     "created_at": "2025-04-14T13:00:00Z",
     "recipe_img_url": "https://example.com/images/lemon-salmon.jpg",
     "difficulty": 2
@@ -338,7 +338,7 @@ module.exports = [
     "votes": 0,
     "servings": 2,
     "tags": ["Asian", "Quick", "Fried Rice"],
-    "created_by": "rice_king",
+    "created_by": "risotto_royal",
     "created_at": "2025-04-13T18:00:00Z",
     "recipe_img_url": "https://example.com/images/egg-fried-rice.jpg",
     "difficulty": 2
@@ -365,7 +365,7 @@ module.exports = [
     "votes": 0,
     "servings": 2,
     "tags": ["Seafood", "Quick", "Dinner"],
-    "created_by": "garlic_guru",
+    "created_by": "chef_anna",
     "created_at": "2025-04-13T12:00:00Z",
     "recipe_img_url": "https://example.com/images/garlic-shrimp.jpg",
     "difficulty": 2
@@ -392,7 +392,7 @@ module.exports = [
     "votes": 0,
     "servings": 2,
     "tags": ["Salad", "Italian", "Vegetarian"],
-    "created_by": "italian_inspo",
+    "created_by": "bake_master",
     "created_at": "2025-04-12T16:00:00Z",
     "recipe_img_url": "https://example.com/images/caprese-salad.jpg",
     "difficulty": 1
@@ -469,7 +469,7 @@ module.exports = [
     "votes": 0,
     "servings": 4,
     "tags": ["Dinner", "Baked", "Comfort Food"],
-    "created_by": "hearty_home",
+    "created_by": "alfredo_chef",
     "created_at": "2025-04-10T19:00:00Z",
     "recipe_img_url": "https://example.com/images/stuffed-peppers.jpg",
     "difficulty": 3
@@ -496,7 +496,7 @@ module.exports = [
     "votes": 0,
     "servings": 4,
     "tags": ["Breakfast", "Brunch", "Sweet"],
-    "created_by": "brunch_boss",
+    "created_by": "chocolate_lover",
     "created_at": "2025-04-10T08:30:00Z",
     "recipe_img_url": "https://example.com/images/pancakes.jpg",
     "difficulty": 2
@@ -524,7 +524,7 @@ module.exports = [
     "votes": 0,
     "servings": 3,
     "tags": ["Vegan", "Indian", "Spicy"],
-    "created_by": "curry_creator",
+    "created_by": "poke_chef",
     "created_at": "2025-04-09T17:00:00Z",
     "recipe_img_url": "https://example.com/images/chickpea-curry.jpg",
     "difficulty": 2
