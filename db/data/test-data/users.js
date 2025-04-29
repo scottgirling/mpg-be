@@ -5,25 +5,25 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=1",
 		"meal_plans": [
 			{
-				"2025-04-21": "Shrimp Tacos",
-				"2025-04-22": "Vegan Buddha Bowl",
-				"2025-04-23": "Spaghetti Carbonara",
-				"2025-04-24": "Tom Yum Soup",
-				"2025-04-25": "Banana Bread",
-				"2025-04-26": "Caesar Salad",
-				"2025-04-27": "Classic Pancakes"
+				"2025-04-21": "7",
+				"2025-04-22": "3",
+				"2025-04-23": "1",
+				"2025-04-24": "8",
+				"2025-04-25": "10",
+				"2025-04-26": "9",
+				"2025-04-27": "4"
 			},
 			{
-				"2025-05-01": "Greek Yogurt Parfait",
-				"2025-05-02": "Beef Stir Fry",
-				"2025-05-03": "Miso Ramen",
-				"2025-05-04": "Chicken Tikka Masala"
+				"2025-05-01": "12",
+				"2025-05-02": "5",
+				"2025-05-03": "11",
+				"2025-05-04": "2"
 			}
 		],
 		"favourite_meals": [
-			"Spaghetti Carbonara",
-			"Banana Bread",
-			"Shrimp Tacos"
+			1,
+			10,
+			7
 		]
 	},
 	{
@@ -32,25 +32,25 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=2",
 		"meal_plans": [
 			{
-				"2025-04-21": "Chicken Tikka Masala",
-				"2025-04-22": "Beef Stir Fry",
-				"2025-04-23": "Tom Yum Soup",
-				"2025-04-24": "Miso Ramen",
-				"2025-04-25": "Vegan Buddha Bowl",
-				"2025-04-26": "Caprese Salad",
-				"2025-04-27": "Shrimp Tacos"
+				"2025-04-21": "2",
+				"2025-04-22": "5",
+				"2025-04-23": "8",
+				"2025-04-24": "11",
+				"2025-04-25": "3",
+				"2025-04-26": "6",
+				"2025-04-27": "7"
 			},
 			{
-				"2025-05-01": "Spaghetti Carbonara",
-				"2025-05-02": "Greek Yogurt Parfait",
-				"2025-05-03": "Banana Bread",
-				"2025-05-04": "Classic Pancakes"
+				"2025-05-01": "1",
+				"2025-05-02": "12",
+				"2025-05-03": "10",
+				"2025-05-04": "4"
 			}
 		],
 		"favourite_meals": [
-			"Chicken Tikka Masala",
-			"Shrimp Tacos",
-			"Spaghetti Carbonara"
+			2,
+			7,
+			1
 		]
 	},
 	{
@@ -59,25 +59,25 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=3",
 		"meal_plans": [
 			{
-				"2025-04-21": "Greek Yogurt Parfait",
-				"2025-04-22": "Vegan Buddha Bowl",
-				"2025-04-23": "Chicken Tikka Masala",
-				"2025-04-24": "Beef Stir Fry",
-				"2025-04-25": "Greek Yogurt Parfait",
-				"2025-04-26": "Banana Bread",
-				"2025-04-27": "Shrimp Tacos"
+				"2025-04-21": "12",
+				"2025-04-22": "3",
+				"2025-04-23": "2",
+				"2025-04-24": "5",
+				"2025-04-25": "12",
+				"2025-04-26": "10",
+				"2025-04-27": "7"
 			},
 			{
-				"2025-05-01": "Classic Pancakes",
-				"2025-05-02": "Caprese Salad",
-				"2025-05-03": "Miso Ramen",
-				"2025-05-04": "Spaghetti Carbonara"
+				"2025-05-01": "4",
+				"2025-05-02": "6",
+				"2025-05-03": "11",
+				"2025-05-04": "1"
 			}
 		],
 		"favourite_meals": [
-			"Vegan Buddha Bowl",
-			"Caesar Salad",
-			"Greek Yogurt Parfait"
+			3,
+			9,
+			12
 		]
 	},
 	{
@@ -86,24 +86,24 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=4",
 		"meal_plans": [
 			{
-				"2025-04-21": "Classic Pancakes",
-				"2025-04-22": "Banana Bread",
-				"2025-04-23": "Chicken Tikka Masala",
-				"2025-04-24": "Miso Ramen",
-				"2025-04-25": "Vegan Buddha Bowl",
-				"2025-04-26": "Greek Yogurt Parfait",
-				"2025-04-27": "Tom Yum Soup"
+				"2025-04-21": "4",
+				"2025-04-22": "10",
+				"2025-04-23": "2",
+				"2025-04-24": "11",
+				"2025-04-25": "3",
+				"2025-04-26": "12",
+				"2025-04-27": "8"
 			},
 			{
-				"2025-05-01": "Spaghetti Carbonara",
-				"2025-05-02": "Beef Stir Fry",
-				"2025-05-03": "Shrimp Tacos",
-				"2025-05-04": "Banana Bread"
+				"2025-05-01": "1",
+				"2025-05-02": "5",
+				"2025-05-03": "7",
+				"2025-05-04": "10"
 			}
 		],
 		"favourite_meals": [
-			"Classic Pancakes",
-			"Banana Bread"
+			4,
+			10
 		]
 	},
 	{
@@ -112,25 +112,25 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=5",
 		"meal_plans": [
 			{
-				"2025-04-21": "Miso Ramen",
-				"2025-04-22": "Beef Stir Fry",
-				"2025-04-23": "Tom Yum Soup",
-				"2025-04-24": "Shrimp Tacos",
-				"2025-04-25": "Greek Yogurt Parfait",
-				"2025-04-26": "Vegan Buddha Bowl",
-				"2025-04-27": "Spaghetti Carbonara"
+				"2025-04-21": "11",
+				"2025-04-22": "5",
+				"2025-04-23": "8",
+				"2025-04-24": "7",
+				"2025-04-25": "12",
+				"2025-04-26": "3",
+				"2025-04-27": "1"
 			},
 			{
-				"2025-05-01": "Caprese Salad",
-				"2025-05-02": "Caesar Salad",
-				"2025-05-03": "Banana Bread",
-				"2025-05-04": "Classic Pancakes"
+				"2025-05-01": "6",
+				"2025-05-02": "9",
+				"2025-05-03": "10",
+				"2025-05-04": "4"
 			}
 		],
 		"favourite_meals": [
-			"Miso Ramen",
-			"Tom Yum Soup",
-			"Spaghetti Carbonara"
+			11,
+			8,
+			1
 		]
 	},
 	{
@@ -139,24 +139,24 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=6",
 		"meal_plans": [
 			{
-				"2025-04-21": "Greek Yogurt Parfait",
-				"2025-04-22": "Caesar Salad",
-				"2025-04-23": "Banana Bread",
-				"2025-04-24": "Tom Yum Soup",
-				"2025-04-25": "Chicken Tikka Masala",
-				"2025-04-26": "Spaghetti Carbonara",
-				"2025-04-27": "Miso Ramen"
+				"2025-04-21": "12",
+				"2025-04-22": "9",
+				"2025-04-23": "10",
+				"2025-04-24": "8",
+				"2025-04-25": "2",
+				"2025-04-26": "1",
+				"2025-04-27": "11"
 			},
 			{
-				"2025-05-01": "Shrimp Tacos",
-				"2025-05-02": "Vegan Buddhe Bowl",
-				"2025-05-03": "Beef Stir Fry",
-				"2025-05-04": "Caesar Salad"
+				"2025-05-01": "7",
+				"2025-05-02": "3",
+				"2025-05-03": "5",
+				"2025-05-04": "9"
 			}
 		],
 		"favourite_meals": [
-			"Greek Yogurt Parfait",
-			"Shrimp Tacos"
+			12,
+			7
 		]
 	}
 ];  
