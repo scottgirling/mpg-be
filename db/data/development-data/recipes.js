@@ -918,4 +918,4 @@ module.exports = [
     "recipe_img_url": "https://example.com/images/apple-crumble.jpg",
     "difficulty": 2
   }
-]
+];

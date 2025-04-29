@@ -5,19 +5,19 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=1",
 		"meal_plans": [
 			{
-			"2025-04-21": "Spaghetti Carbonara",
-			"2025-04-22": "Chicken Alfredo",
-			"2025-04-23": "Banana Bread",
-			"2025-04-24": "Pasta Primavera",
-			"2025-04-25": "Beef Tacos",
-			"2025-04-26": "Chicken Caesar Wrap",
-			"2025-04-27": "Cauliflower Rice"
+			"2025-04-21": "1",
+			"2025-04-22": "33",
+			"2025-04-23": "31",
+			"2025-04-24": "32",
+			"2025-04-25": "34",
+			"2025-04-26": "4",
+			"2025-04-27": "29"
 			}
 		],
 		"favourite_meals": [
-			"Spaghetti Carbonara",
-			"Banana Bread",
-			"Pasta Primavera"
+			1,
+			31,
+			32
 		]
 	},
 	{
@@ -26,17 +26,17 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=2",
 		"meal_plans": [
 			{
-			"2025-04-21": "Pasta Primavera",
-			"2025-04-22": "Spaghetti Carbonara",
-			"2025-04-23": "Mushroom Risotto",
-			"2025-04-24": "Margarita Pizza",
-			"2025-04-25": "Caprese Salad",
-			"2025-04-26": "Banana Bread",
-			"2025-04-27": "Chicken Alfredo"
+			"2025-04-21": "32",
+			"2025-04-22": "1",
+			"2025-04-23": "24",
+			"2025-04-24": "6",
+			"2025-04-25": "15",
+			"2025-04-26": "31",
+			"2025-04-27": "33"
 			}
 		],
 		"favourite_meals": [
-			"Pasta Primavera",
+			32,
 		]
 	},
 	{
@@ -45,18 +45,18 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=3",
 		"meal_plans": [
 			{
-			"2025-04-21": "Banana Bread",
-			"2025-04-22": "Chocolate Chip Cookies",
-			"2025-04-23": "Apple Crumble",
-			"2025-04-24": "Pulled Pork Sandwich",
-			"2025-04-25": "Cauliflower Pie",
-			"2025-04-26": "Beef Stroganoff",
-			"2025-04-27": "Avocado Toast Deluxe"
+			"2025-04-21": "31",
+			"2025-04-22": "10",
+			"2025-04-23": "35",
+			"2025-04-24": "16",
+			"2025-04-25": "29",
+			"2025-04-26": "3",
+			"2025-04-27": "2"
 			}
 		],
 		"favourite_meals": [
-			"Banana Bread",
-			"Apple Crumble"
+			31,
+			35
 		]
 	},
 	{
@@ -65,17 +65,17 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=4",
 		"meal_plans": [
 			{
-			"2025-04-21": "Tomato Soup",
-			"2025-04-22": "Chicken Caesar Wrap",
-			"2025-04-23": "Classic Hummus",
-			"2025-04-24": "Lentil Stew",
-			"2025-04-25": "Lentil Soup",
-			"2025-04-26": "Teriyaki Chicken",
-			"2025-04-27": "Peanut Butter Smoothie"
+			"2025-04-21": "9",
+			"2025-04-22": "4",
+			"2025-04-23": "5",
+			"2025-04-24": "26",
+			"2025-04-25": "28",
+			"2025-04-26": "7",
+			"2025-04-27": "17"
 			}
 		],
 		"favourite_meals": [
-			"Tomato Soup"
+			9
 		]
 	},
 	{
@@ -84,17 +84,17 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=5",
 		"meal_plans": [
 			{
-			"2025-04-21": "Chicken Caesar Wrap",
-			"2025-04-22": "Beef Tacos",
-			"2025-04-23": "Avocado Toast Deluxe",
-			"2025-04-24": "Spaghetti Carbonara",
-			"2025-04-25": "Teriyaki Chicken",
-			"2025-04-26": "Pasta Primavera",
-			"2025-04-27": "Beef Stroganoff"
+			"2025-04-21": "4",
+			"2025-04-22": "34",
+			"2025-04-23": "2",
+			"2025-04-24": "1",
+			"2025-04-25": "7",
+			"2025-04-26": "32",
+			"2025-04-27": "3"
 			}
 		],
 		"favourite_meals": [
-			"Beef Tacos"
+			34
 		]
 	},
 	{
@@ -103,17 +103,17 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=6",
 		"meal_plans": [
 			{
-			"2025-04-21": "Chocolate Chip Cookies",
-			"2025-04-22": "Crispy Tofu Stir Fry",
-			"2025-04-23": "Peanut Butter Smoothie",
-			"2025-04-24": "Chocolate Mousse",
-			"2025-04-25": "Grilled Cheese Sandwich",
-			"2025-04-26": "Avocado Toast Deluxe",
-			"2025-04-27": "Egg Fried Rice"
+			"2025-04-21": "10",
+			"2025-04-22": "12",
+			"2025-04-23": "17",
+			"2025-04-24": "28",
+			"2025-04-25": "8",
+			"2025-04-26": "2",
+			"2025-04-27": "13"
 			}
 		],
 		"favourite_meals": [
-			"Chocolate Chip Cookies",
+			10,
 		]
 	},
 	{
@@ -122,13 +122,13 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=7",
 		"meal_plans": [
 			{
-			"2025-04-21": "Classic Hummus",
-			"2025-04-22": "Beef Stroganoff",
-			"2025-04-23": "Chocolate Chip Cookies",
-			"2025-04-24": "Lentil Stew",
-			"2025-04-25": "Crispy Tofu Stir Fry",
-			"2025-04-26": "Egg Fried Rice",
-			"2025-04-27": "Avocado Toast Deluxe"
+			"2025-04-21": "5",
+			"2025-04-22": "3",
+			"2025-04-23": "10",
+			"2025-04-24": "26",
+			"2025-04-25": "12",
+			"2025-04-26": "13",
+			"2025-04-27": "2"
 			}
 		],
 		"favourite_meals": []
@@ -139,17 +139,17 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=8",
 		"meal_plans": [
 			{
-			"2025-04-21": "Peanut Butter Smoothie",
-			"2025-04-22": "Chickpea Curry",
-			"2025-04-23": "Baked Ziti",
-			"2025-04-24": "Fruit Salaf",
-			"2025-04-25": "Vegetable Soup",
-			"2025-04-26": "Mushroom Risotto",
-			"2025-04-27": "Garlic Parmesan Breadsticks"
+			"2025-04-21": "17",
+			"2025-04-22": "20",
+			"2025-04-23": "21",
+			"2025-04-24": "22",
+			"2025-04-25": "23",
+			"2025-04-26": "24",
+			"2025-04-27": "25"
 			}
 		],
 		"favourite_meals": [
-			"Garlic Parmesan Breadsticks"
+			25
 		]
 	},
 	{
@@ -158,17 +158,17 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=9",
 		"meal_plans": [
 			{
-			"2025-04-21": "Chicken Alfredo",
-			"2025-04-22": "Pasta Primavera",
-			"2025-04-23": "Fruit Salad",
-			"2025-04-24": "Spaghetti Carbonara",
-			"2025-04-25": "Chickpea Curry",
-			"2025-04-26": "Mushroom Risotto",
-			"2025-04-27": "Garlic Butter Shrimp"
+			"2025-04-21": "33",
+			"2025-04-22": "32",
+			"2025-04-23": "22",
+			"2025-04-24": "1",
+			"2025-04-25": "20",
+			"2025-04-26": "24",
+			"2025-04-27": "14"
 			}
 		],
 		"favourite_meals": [
-			"Fruit Salad"
+			22
 		]
 	},
 	{
@@ -177,17 +177,17 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=10",
 		"meal_plans": [
 			{
-			"2025-04-21": "Fruit Salad",
-			"2025-04-22": "Margarita Pizza",
-			"2025-04-23": "Peanut Butter Smoothie",
-			"2025-04-24": "Chocolate Chip Cookies",
-			"2025-04-25": "Egg Fried Rice",
-			"2025-04-26": "Avocado Toast Deluxe",
-			"2025-04-27": "Crispy Tofu Stir-Fry"
+			"2025-04-21": "22",
+			"2025-04-22": "6",
+			"2025-04-23": "17",
+			"2025-04-24": "10",
+			"2025-04-25": "13",
+			"2025-04-26": "2",
+			"2025-04-27": "12"
 			}
 		],
 		"favourite_meals": [
-			"Fruit Salad",
+			22,
 		]
 	},
 	{
@@ -196,17 +196,17 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=11",
 		"meal_plans": [
 		{
-			"2025-04-21": "Mushroom Risotto",
-			"2025-04-22": "Chickpea Curry",
-			"2025-04-23": "Fruit Salad",
-			"2025-04-24": "Chicken Alfredo",
-			"2025-04-25": "Apple Crumble",
-			"2025-04-26": "Beef Tacos",
-			"2025-04-27": "Pasta Primavera"
+			"2025-04-21": "24",
+			"2025-04-22": "20",
+			"2025-04-23": "22",
+			"2025-04-24": "33",
+			"2025-04-25": "35",
+			"2025-04-26": "34",
+			"2025-04-27": "32"
 		}
 		],
 		"favourite_meals": [
-			"Mushroom Risotto"
+			24
 		]
 	},
 	{
@@ -215,13 +215,13 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=12",
 		"meal_plans": [
 		{
-			"2025-04-21": "Avocado Toast Deluxe",
-			"2025-04-22": "Garlic Butter Shrimp",
-			"2025-04-23": "Apple Crumble",
-			"2025-04-24": "Beef Tacos",
-			"2025-04-25": "Banana Bread",
-			"2025-04-26": "Shakshuka",
-			"2025-04-27": "Cauliflower Rice"
+			"2025-04-21": "2",
+			"2025-04-22": "14",
+			"2025-04-23": "35",
+			"2025-04-24": "34",
+			"2025-04-25": "31",
+			"2025-04-26": "30",
+			"2025-04-27": "29"
 		}
 		],
 		"favourite_meals": []
@@ -232,13 +232,13 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=13",
 		"meal_plans": [
 		{
-			"2025-04-21": "Beef Stroganoff",
-			"2025-04-22": "Chicken Caesar Wrap",
-			"2025-04-23": "Shakshuka",
-			"2025-04-24": "Vegetable Soup",
-			"2025-04-25": "Margarita Pizza",
-			"2025-04-26": "Mushroom Risotto",
-			"2025-04-27": "Peanut Butter Smoothie"
+			"2025-04-21": "3",
+			"2025-04-22": "4",
+			"2025-04-23": "30",
+			"2025-04-24": "23",
+			"2025-04-25": "6",
+			"2025-04-26": "24",
+			"2025-04-27": "17"
 		}
 		],
 		"favourite_meals": []
@@ -249,17 +249,17 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=14",
 		"meal_plans": [
 		{
-			"2025-04-21": "Spicy Tuna Poke Bowl",
-			"2025-04-22": "Vegetable Soup",
-			"2025-04-23": "Fruit Salad",
-			"2025-04-24": "Baked Ziti",
-			"2025-04-25": "Chickpea Curry",
-			"2025-04-26": "Clasic Pancakes",
-			"2025-04-27": "Stuffed Bell Peppers"
+			"2025-04-21": "27",
+			"2025-04-22": "23",
+			"2025-04-23": "22",
+			"2025-04-24": "21",
+			"2025-04-25": "20",
+			"2025-04-26": "19",
+			"2025-04-27": "18"
 		}
 		],
 		"favourite_meals": [
-			"Spicy Tuna Poke Bowl"
+			27
 		]
 	},
 	{
@@ -268,18 +268,18 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=15",
 		"meal_plans": [
 		{
-			"2025-04-21": "Chocolate Chip Cookies",
-			"2025-04-22": "Peanut Butter Smoothie",
-			"2025-04-23": "Chocolate Mousse",
-			"2025-04-24": "Spaghetti Carbonara",
-			"2025-04-25": "Garlic Butter Shrimp",
-			"2025-04-26": "Caprese Salad",
-			"2025-04-27": "Pulled Pork Sandwich"
+			"2025-04-21": "10",
+			"2025-04-22": "17",
+			"2025-04-23": "28",
+			"2025-04-24": "1",
+			"2025-04-25": "14",
+			"2025-04-26": "15",
+			"2025-04-27": "16"
 		}
 		],
 		"favourite_meals": [
-			"Egg Fried Rice",
-			"Garlic Butter Shrimp"
+			13,
+			14
 		]
 	},
 	{
@@ -288,18 +288,18 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=16",
 		"meal_plans": [
 		{
-			"2025-04-21": "Chickpea Curry",
-			"2025-04-22": "Pulled Pork Sandwich",
-			"2025-04-23": "Roasted Cauliflower",
-			"2025-04-24": "Cauliflower Rice",
-			"2025-04-25": "Beef Tacos",
-			"2025-04-26": "Grilled Cheese Sandwich",
-			"2025-04-27": "Tomato Soup"
+			"2025-04-21": "20",
+			"2025-04-22": "16",
+			"2025-04-23": "30",
+			"2025-04-24": "29",
+			"2025-04-25": "34",
+			"2025-04-26": "8",
+			"2025-04-27": "9"
 		}
 		],
 		"favourite_meals": [
-			"Cauliflower Rice",
-			"Tomato Soup"
+			29,
+			9
 		]
 	},
 	{
@@ -308,17 +308,17 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=17",
 		"meal_plans": [
 		{
-			"2025-04-21": "Spaghetti Carbonara",
-			"2025-04-22": "Fruit Salad",
-			"2025-04-23": "Egg Fried Rice",
-			"2025-04-24": "Avocado Toast Deluxe",
-			"2025-04-25": "Beef Stroganoff",
-			"2025-04-26": "Chicken Caesar Wrap",
-			"2025-04-27": "Classic Hummus"
+			"2025-04-21": "1",
+			"2025-04-22": "22",
+			"2025-04-23": "13",
+			"2025-04-24": "2",
+			"2025-04-25": "3",
+			"2025-04-26": "4",
+			"2025-04-27": "5"
 		}
 		],
 		"favourite_meals": [
-			"Egg Fried Rice"
+			13
 		]
 	},
 	{
@@ -327,18 +327,18 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=18",
 		"meal_plans": [
 		{
-			"2025-04-21": "Chicken Alfredo",
-			"2025-04-22": "Chickpea Curry",
-			"2025-04-23": "Mushroom Risotto",
-			"2025-04-24": "Crispy Tofu Stir Fry",
-			"2025-04-25": "Alfredo Pizza",
-			"2025-04-26": "Garlic Parmesan Breadsticks",
-			"2025-04-27": "Lentil Stew"
+			"2025-04-21": "33",
+			"2025-04-22": "20",
+			"2025-04-23": "24",
+			"2025-04-24": "12",
+			"2025-04-25": "32",
+			"2025-04-26": "25",
+			"2025-04-27": "26"
 		}
 		],
 		"favourite_meals": [
-			"Chicken Alfredo",
-			"Baked Ziti"
+			33,
+			21
 		]
 	},
 	{
@@ -347,19 +347,19 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=19",
 		"meal_plans": [
 		{
-			"2025-04-21": "Beef Tacos",
-			"2025-04-22": "Lentil Stew",
-			"2025-04-23": "Spicy Tuna Poke Bowl",
-			"2025-04-24": "Chocolate Mousse",
-			"2025-04-25": "Cauliflower Rice",
-			"2025-04-26": "Shakshuka",
-			"2025-04-27": "Banana Bread"
+			"2025-04-21": "34",
+			"2025-04-22": "26",
+			"2025-04-23": "27",
+			"2025-04-24": "28",
+			"2025-04-25": "29",
+			"2025-04-26": "30",
+			"2025-04-27": "31"
 		}
 		],
 		"favourite_meals": [
-			"Beef Tacos",
-			"Chicken Caesar Wrap",
-			"Margarita Pizza"
+			34,
+			4,
+			6
 		]
 	},
 	{
@@ -368,18 +368,18 @@ module.exports = [
 		"avatar_url": "https://picsum.photos/200?random=20",
 		"meal_plans": [
 		{
-			"2025-04-21": "Apple Crumble",
-			"2025-04-22": "Chocolate Chip Cookies",
-			"2025-04-23": "Pasta Primavera",
-			"2025-04-24": "Peanut Butter Smoothie",
-			"2025-04-25": "Spaghetti Carbonara",
-			"2025-04-26": "Avocado Toast Deluxe",
-			"2025-04-27": "Beef Stroganoff"
+			"2025-04-21": "35",
+			"2025-04-22": "10",
+			"2025-04-23": "32",
+			"2025-04-24": "17",
+			"2025-04-25": "1",
+			"2025-04-26": "2",
+			"2025-04-27": "3"
 		}
 		],
 		"favourite_meals": [
-			"Cheesecake",
-			"Chocolate Chip Cookies"
+			6,
+			10
 		]
 	}
 ];
