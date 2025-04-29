@@ -1,10 +1,28 @@
 const express = require("express");
 const getEndpoints = require("../controllers/getEndpoints");
 const getRecipes = require("../controllers/getRecipes");
+const getRecipeById = require("../controllers/getRecipeById");
 const app = express();
 
-app.use("/api/recipes", getRecipes)
+app.use("/api/recipes/:recipe_id", getRecipeById);
+
+app.use("/api/recipes", getRecipes);
 
 app.use("/api", getEndpoints);
+
+app.use((error, request, response, next) => {
+    if (error.status && error.msg) {
+        response.status(error.status).send({ msg: error.msg });
+    }
+    next(error);
+});
+
+app.use((error, request, response, next) => {
+    if (error.code === "22P02") {
+        console.log("in the correct code block")
+        response.status(400).send({ msg: "Invalid data type." });
+    }
+    next(error);
+});
 
 module.exports = app;

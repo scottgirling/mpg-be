@@ -13,7 +13,7 @@ module.exports = [
     "instructions": [
       "Boil spaghetti in salted water.",
       "Fry pancetta and garlic until crispy.",
-      "Beat eggs with cheese, salt, and pepper.",
+      "Beat eggs with cheese, salt and pepper.",
       "Drain pasta and mix quickly with pancetta and egg mixture.",
       "Serve hot."
     ],

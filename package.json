@@ -4,7 +4,7 @@
   "description": "Backend to Meal Plan Generator Web App",
   "main": "listen.js",
   "scripts": {
-    "test": "jest",
+    "test": "TZ=BST jest",
     "setup-dbs": "psql -f ./db/setup.sql",
     "seed": "node ./db/seeds/run-seed.js",
     "seed-prod": "NODE_ENV=production npm run seed",

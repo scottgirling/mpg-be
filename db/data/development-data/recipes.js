@@ -23,7 +23,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Italian", "Pasta", "Quick"],
     "created_by": "chef_anna",
-    "created_at": "2025-04-23T14:00:00Z",
+    "created_at": "2025-04-23T14:00:00:00Z",
     "recipe_img_url": "https://example.com/images/spaghetti-carbonara.jpg",
     "difficulty": 2
   },
@@ -50,7 +50,7 @@ module.exports = [
     "servings": 1,
     "tags": ["Breakfast", "Quick", "Healthy"],
     "created_by": "bake_master",
-    "created_at": "2025-04-20T08:00:00Z",
+    "created_at": "2025-04-20T08:00:00:00Z",
     "recipe_img_url": "https://example.com/images/avocado-toast.jpg",
     "difficulty": 1
   },
@@ -80,7 +80,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Russian", "Dinner", "Comfort Food"],
     "created_by": "alfredo_chef",
-    "created_at": "2025-04-19T17:30:00Z",
+    "created_at": "2025-04-19T17:30:00:00Z",
     "recipe_img_url": "https://example.com/images/beef-stroganoff.jpg",
     "difficulty": 3
   },
@@ -104,7 +104,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Lunch", "Wrap", "Quick"],
     "created_by": "taco_lord",
-    "created_at": "2025-04-18T12:00:00Z",
+    "created_at": "2025-04-18T12:00:00:00Z",
     "recipe_img_url": "https://example.com/images/caesar-wrap.jpg",
     "difficulty": 2
   },
@@ -129,7 +129,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Dip", "Vegan", "Mediterranean"],
     "created_by": "pasta_pro",
-    "created_at": "2025-04-18T09:15:00Z",
+    "created_at": "2025-04-18T09:15:00:00Z",
     "recipe_img_url": "https://example.com/images/hummus.jpg",
     "difficulty": 1
   },
@@ -155,7 +155,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Pizza", "Vegetarian", "Italian"],
     "created_by": "pasta_chef",
-    "created_at": "2025-04-17T18:45:00Z",
+    "created_at": "2025-04-17T18:45:00:00Z",
     "recipe_img_url": "https://example.com/images/margarita-pizza.jpg",
     "difficulty": 3
   },
@@ -181,7 +181,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Japanese", "Dinner", "Saucy"],
     "created_by": "cauliflower_connoisseur",
-    "created_at": "2025-04-17T11:30:00Z",
+    "created_at": "2025-04-17T11:30:00:00Z",
     "recipe_img_url": "https://example.com/images/teriyaki-chicken.jpg",
     "difficulty": 2
   },
@@ -203,7 +203,7 @@ module.exports = [
     "servings": 1,
     "tags": ["Snack", "Comfort Food", "Quick"],
     "created_by": "egg_expert",
-    "created_at": "2025-04-16T14:00:00Z",
+    "created_at": "2025-04-16T14:00:00:00Z",
     "recipe_img_url": "https://example.com/images/grilled-cheese.jpg",
     "difficulty": 1
   },
@@ -230,7 +230,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Soup", "Vegetarian", "Classic"],
     "created_by": "soup_sculptor",
-    "created_at": "2025-04-16T10:00:00Z",
+    "created_at": "2025-04-16T10:00:00:00Z",
     "recipe_img_url": "https://example.com/images/tomato-soup.jpg",
     "difficulty": 2
   },
@@ -258,7 +258,7 @@ module.exports = [
     "servings": 12,
     "tags": ["Baking", "Dessert", "Sweet"],
     "created_by": "cookie_monsta",
-    "created_at": "2025-04-15T16:30:00Z",
+    "created_at": "2025-04-15T16:30:00:00Z",
     "recipe_img_url": "https://example.com/images/choc-chip-cookies.jpg",
     "difficulty": 2
   },
@@ -284,7 +284,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Seafood", "Healthy", "Quick"],
     "created_by": "bake_master",
-    "created_at": "2025-04-14T13:00:00Z",
+    "created_at": "2025-04-14T13:00:00:00Z",
     "recipe_img_url": "https://example.com/images/lemon-salmon.jpg",
     "difficulty": 2
   },
@@ -312,7 +312,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Vegan", "Asian", "Quick"],
     "created_by": "tofu_tamer",
-    "created_at": "2025-04-14T10:00:00Z",
+    "created_at": "2025-04-14T10:00:00:00Z",
     "recipe_img_url": "https://example.com/images/tofu-stirfry.jpg",
     "difficulty": 3
   },
@@ -339,7 +339,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Asian", "Quick", "Fried Rice"],
     "created_by": "risotto_royal",
-    "created_at": "2025-04-13T18:00:00Z",
+    "created_at": "2025-04-13T18:00:00:00Z",
     "recipe_img_url": "https://example.com/images/egg-fried-rice.jpg",
     "difficulty": 2
   },
@@ -366,7 +366,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Seafood", "Quick", "Dinner"],
     "created_by": "chef_anna",
-    "created_at": "2025-04-13T12:00:00Z",
+    "created_at": "2025-04-13T12:00:00:00Z",
     "recipe_img_url": "https://example.com/images/garlic-shrimp.jpg",
     "difficulty": 2
   },
@@ -393,7 +393,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Salad", "Italian", "Vegetarian"],
     "created_by": "bake_master",
-    "created_at": "2025-04-12T16:00:00Z",
+    "created_at": "2025-04-12T16:00:00:00Z",
     "recipe_img_url": "https://example.com/images/caprese-salad.jpg",
     "difficulty": 1
   },
@@ -418,7 +418,7 @@ module.exports = [
     "servings": 4,
     "tags": ["BBQ", "Sandwich", "Lunch"],
     "created_by": "smoke_stack",
-    "created_at": "2025-04-12T11:45:00Z",
+    "created_at": "2025-04-12T11:45:00:00Z",
     "recipe_img_url": "https://example.com/images/pulled-pork.jpg",
     "difficulty": 2
   },
@@ -442,7 +442,7 @@ module.exports = [
     "servings": 1,
     "tags": ["Smoothie", "Breakfast", "Drink"],
     "created_by": "smoothie_supreme",
-    "created_at": "2025-04-11T08:00:00Z",
+    "created_at": "2025-04-11T08:00:00:00Z",
     "recipe_img_url": "https://example.com/images/peanut-smoothie.jpg",
     "difficulty": 1
   },
@@ -470,7 +470,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Dinner", "Baked", "Comfort Food"],
     "created_by": "alfredo_chef",
-    "created_at": "2025-04-10T19:00:00Z",
+    "created_at": "2025-04-10T19:00:00:00Z",
     "recipe_img_url": "https://example.com/images/stuffed-peppers.jpg",
     "difficulty": 3
   },
@@ -497,7 +497,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Breakfast", "Brunch", "Sweet"],
     "created_by": "chocolate_lover",
-    "created_at": "2025-04-10T08:30:00Z",
+    "created_at": "2025-04-10T08:30:00:00Z",
     "recipe_img_url": "https://example.com/images/pancakes.jpg",
     "difficulty": 2
   },
@@ -525,7 +525,7 @@ module.exports = [
     "servings": 3,
     "tags": ["Vegan", "Indian", "Spicy"],
     "created_by": "poke_chef",
-    "created_at": "2025-04-09T17:00:00Z",
+    "created_at": "2025-04-09T17:00:00:00Z",
     "recipe_img_url": "https://example.com/images/chickpea-curry.jpg",
     "difficulty": 2
   },
@@ -552,7 +552,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Italian", "Pasta", "Baked"],
     "created_by": "pasta_pro",
-    "created_at": "2025-04-08T18:30:00Z",
+    "created_at": "2025-04-08T18:30:00:00Z",
     "recipe_img_url": "https://example.com/images/baked-ziti.jpg",
     "difficulty": 3
   },
@@ -577,7 +577,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Snack", "Vegan", "Healthy"],
     "created_by": "fruit_fanatic",
-    "created_at": "2025-04-08T12:00:00Z",
+    "created_at": "2025-04-08T12:00:00:00Z",
     "recipe_img_url": "https://example.com/images/fruit-salad.jpg",
     "difficulty": 1
   },
@@ -604,7 +604,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Soup", "Vegan", "Healthy"],
     "created_by": "soup_sculptor",
-    "created_at": "2025-04-07T16:00:00Z",
+    "created_at": "2025-04-07T16:00:00:00Z",
     "recipe_img_url": "https://example.com/images/vegetable-soup.jpg",
     "difficulty": 2
   },
@@ -631,7 +631,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Italian", "Comfort Food", "Vegetarian"],
     "created_by": "risotto_royal",
-    "created_at": "2025-04-07T12:30:00Z",
+    "created_at": "2025-04-07T12:30:00:00Z",
     "recipe_img_url": "https://example.com/images/mushroom-risotto.jpg",
     "difficulty": 3
   },
@@ -656,7 +656,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Side Dish", "Baked", "Comfort Food"],
     "created_by": "bread_baker",
-    "created_at": "2025-04-06T15:00:00Z",
+    "created_at": "2025-04-06T15:00:00:00Z",
     "recipe_img_url": "https://example.com/images/garlic-breadsticks.jpg",
     "difficulty": 2
   },
@@ -685,7 +685,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Vegan", "Stew", "Healthy"],
     "created_by": "stew_master",
-    "created_at": "2025-04-06T13:45:00Z",
+    "created_at": "2025-04-06T13:45:00:00Z",
     "recipe_img_url": "https://example.com/images/lentil-stew.jpg",
     "difficulty": 3
   },
@@ -710,7 +710,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Poke Bowl", "Seafood", "Healthy"],
     "created_by": "poke_chef",
-    "created_at": "2025-04-05T11:00:00Z",
+    "created_at": "2025-04-05T11:00:00:00Z",
     "recipe_img_url": "https://example.com/images/tuna-poke.jpg",
     "difficulty": 2
   },
@@ -734,7 +734,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Dessert", "Sweet", "Chocolate"],
     "created_by": "chocolate_lover",
-    "created_at": "2025-04-05T10:30:00Z",
+    "created_at": "2025-04-05T10:30:00:00Z",
     "recipe_img_url": "https://example.com/images/chocolate-mousse.jpg",
     "difficulty": 3
   },
@@ -757,7 +757,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Low Carb", "Vegan", "Side Dish"],
     "created_by": "cauliflower_connoisseur",
-    "created_at": "2025-04-04T14:00:00Z",
+    "created_at": "2025-04-04T14:00:00:00Z",
     "recipe_img_url": "https://example.com/images/cauliflower-rice.jpg",
     "difficulty": 1
   },
@@ -784,7 +784,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Middle Eastern", "Brunch", "Eggs"],
     "created_by": "egg_expert",
-    "created_at": "2025-04-04T12:00:00Z",
+    "created_at": "2025-04-04T12:00:00:00Z",
     "recipe_img_url": "https://example.com/images/shakshuka.jpg",
     "difficulty": 2
   },
@@ -810,7 +810,7 @@ module.exports = [
     "servings": 8,
     "tags": ["Dessert", "Sweet", "Baked"],
     "created_by": "bake_master",
-    "created_at": "2025-04-03T18:00:00Z",
+    "created_at": "2025-04-03T18:00:00:00Z",
     "recipe_img_url": "https://example.com/images/banana-bread.jpg",
     "difficulty": 2
   },
@@ -837,7 +837,7 @@ module.exports = [
     "servings": 2,
     "tags": ["Vegetarian", "Pasta", "Quick"],
     "created_by": "pasta_chef",
-    "created_at": "2025-04-03T17:30:00Z",
+    "created_at": "2025-04-03T17:30:00:00Z",
     "recipe_img_url": "https://example.com/images/pasta-primavera.jpg",
     "difficulty": 2
   },
@@ -863,7 +863,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Pasta", "Comfort Food", "Chicken"],
     "created_by": "alfredo_chef",
-    "created_at": "2025-04-02T15:00:00Z",
+    "created_at": "2025-04-02T15:00:00:00Z",
     "recipe_img_url": "https://example.com/images/chicken-alfredo.jpg",
     "difficulty": 3
   },
@@ -888,7 +888,7 @@ module.exports = [
     "servings": 3,
     "tags": ["Mexican", "Tacos", "Quick"],
     "created_by": "taco_lord",
-    "created_at": "2025-04-01T18:30:00Z",
+    "created_at": "2025-04-01T18:30:00:00Z",
     "recipe_img_url": "https://example.com/images/beef-tacos.jpg",
     "difficulty": 2
   },
@@ -914,7 +914,7 @@ module.exports = [
     "servings": 4,
     "tags": ["Dessert", "Baked", "Sweet"],
     "created_by": "dessert_queen",
-    "created_at": "2025-04-01T17:00:00Z",
+    "created_at": "2025-04-01T17:00:00:00Z",
     "recipe_img_url": "https://example.com/images/apple-crumble.jpg",
     "difficulty": 2
   }
