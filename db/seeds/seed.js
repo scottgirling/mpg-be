@@ -1,5 +1,6 @@
 const format = require("pg-format");
 const db = require("../connection");
+const formatRecipeInstructions = require("./utils");
 
 const seed = ({ tagData, userData, recipeData }) => {
     return db.query(`DROP TABLE IF EXISTS recipes;`)
@@ -57,9 +58,10 @@ const seed = ({ tagData, userData, recipeData }) => {
         return db.query(insertUsersQueryStr);
     })
     .then(() => {
+        const formattedRecipeData = recipeData.map(formatRecipeInstructions);
         const insertRecipeQueryStr = format(
             `INSERT INTO recipes (name, ingredients, instructions, prep_time, cook_time, votes, servings, tags, created_by, created_at, recipe_img_url, difficulty) VALUES %L RETURNING *;`, 
-            recipeData.map(({ name, ingredients, instructions, prep_time, cook_time, votes = 0, servings, tags, created_by, created_at, recipe_img_url, difficulty }) => [
+            formattedRecipeData.map(({ name, ingredients, instructions, prep_time, cook_time, votes = 0, servings, tags, created_by, created_at, recipe_img_url, difficulty }) => [
                 name,
                 (`{${ingredients}}`),
                 (`{${instructions}}`),
