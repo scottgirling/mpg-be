@@ -48,6 +48,92 @@ describe("GET /api/recipes", () => {
             });
         });
     });
+    describe("GET /api/recipes QUERIES", () => {
+        test("200: responds with an ordered array of recipe objects sorted by a valid column with an appropriate status code", () => {
+            return request(app)
+            .get("/api/recipes?sort_by=difficulty")
+            .expect(200)
+            .then(({ body: { recipes } }) => {
+                expect(recipes).toBeSortedBy("difficulty", { descending: true });
+            });
+        });
+        test("200: responds with an ordered array of recipe objects sorted by a default column ('created_at') when one is not specifically selected, as well as an appropriate status code", () => {
+            return request(app)
+            .get("/api/recipes")
+            .expect(200)
+            .then(({ body: { recipes } }) => {
+                expect(recipes).toBeSortedBy("created_at", { descending: true });
+            });
+        });
+        test("400: responds with an appropriate status code and error message when sorted by a non-existent column", () => {
+            return request(app)
+            .get("/api/recipes?sort_by=total_time")
+            .expect(400)
+            .then(({ body: { msg } }) => {
+                expect(msg).toBe("Invalid 'Sort By' or 'Order'. Please select a valid input.");
+            });
+        });
+        test("200: responds with an ordered array of recipe objects given the 'order' query, as well as an appropriate status code", () => {
+            return request(app)
+            .get("/api/recipes?order=asc")
+            .expect(200)
+            .then(({ body: { recipes } }) => {
+                expect(recipes).toBeSortedBy("created_at", { descending: false });
+            });
+        });
+        test("200: responds with an ordered array of recipe objects in the default order ('desc') when one is not specifically selected, as well as an appropriate status code", () => {
+            return request(app)
+            .get("/api/recipes?sort_by=prep_time")
+            .expect(200)
+            .then(({ body: { recipes } }) => {
+                expect(recipes).toBeSortedBy("prep_time", { descending: true });
+            });
+        });
+        test("400: responds with an appropriate status code and error message when ordered by a non-existent 'order' query", () => {
+            return request(app)
+            .get("/api/recipes?order=newest")
+            .expect(400)
+            .then(({ body: { msg } }) => {
+                expect(msg).toBe("Invalid 'Sort By' or 'Order'. Please select a valid input.");
+            });
+        });
+        test("200: responds with a filtered array of recipe objects when a single 'tag' is provided, as well as an appropriate status code", () => {
+            return request(app)
+            .get("/api/recipes?tags=quick")
+            .expect(200)
+            .then(({ body: { recipes } }) => {
+                recipes.forEach((recipe) => {
+                    expect(recipe.tags.includes("quick")).toBe(true);
+                });
+            });
+        });
+        test("200: responds with a filtered array of recipe objects when multiple 'tags' are provided, as well as an appropriate status code", () => {
+            return request(app)
+            .get("/api/recipes?tags=quick&tags=dinner&tags=comfort-food")
+            .expect(200)
+            .then(({ body: { recipes } }) => {
+                recipes.forEach((recipe) => {
+                    expect(recipe.tags.includes("quick") || recipe.tags.includes("dinner") || recipe.tags.includes("comfort-food")).toBe(true);
+                });
+            });
+        });
+        test("200: responds with an empty array and an appropriate status code when valid tag(s) are provided but no recipes currently exist on it", () => {
+            return request(app)
+            .get("/api/recipes?tags=mexican")
+            .expect(200)
+            .then(({ body: { recipes } }) => {
+                expect(recipes.length).toBe(0);
+            });
+        });
+        test("404: responds with an appropriate status code and error message when filtering by a 'tag' that does not yet exist", () => {
+            return request(app)
+            .get("/api/recipes?tags=chinese")
+            .expect(404)
+            .then(({ body: { msg } }) => {
+                expect(msg).toBe("Category does not exist. Please try another.");
+            });
+        });
+    });
 });
 
 describe("GET /api/recipes/:recipe_id", () => {
@@ -78,7 +164,7 @@ describe("GET /api/recipes/:recipe_id", () => {
                 "cook_time": "20 mins",
                 "votes": 0,
                 "servings": 2,
-                "tags": ["Italian", "Pasta", "Quick"],
+                "tags": ["italian", "pasta", "quick"],
                 "created_by": "chef_anna",
                 "created_at": "2025-04-23T14:00:00.000Z",
                 "recipe_img_url": "https://example.com/images/spaghetti-carbonara.jpg",
