@@ -195,7 +195,7 @@ module.exports = [
     "cook_time": "10 mins",
     "votes": 0,
     "servings": 3,
-    "tags": ["mexican", "seafood", "quick"],
+    "tags": ["seafood", "quick"],
     "created_by": "chef_anna",
     "created_at": "2025-04-17T17:30:00Z",
     "recipe_img_url": "https://example.com/images/shrimp-tacos.jpg",
