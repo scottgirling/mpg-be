@@ -15,9 +15,9 @@ module.exports = [
 			}
 		],
 		"favourite_meals": [
-			1,
-			31,
-			32
+			"1",
+			"31",
+			"32"
 		]
 	},
 	{
@@ -36,7 +36,7 @@ module.exports = [
 			}
 		],
 		"favourite_meals": [
-			32,
+			"32",
 		]
 	},
 	{
@@ -55,8 +55,8 @@ module.exports = [
 			}
 		],
 		"favourite_meals": [
-			31,
-			35
+			"31",
+			"35"
 		]
 	},
 	{
@@ -75,7 +75,7 @@ module.exports = [
 			}
 		],
 		"favourite_meals": [
-			9
+			"9"
 		]
 	},
 	{
@@ -94,7 +94,7 @@ module.exports = [
 			}
 		],
 		"favourite_meals": [
-			34
+			"34"
 		]
 	},
 	{
@@ -113,7 +113,7 @@ module.exports = [
 			}
 		],
 		"favourite_meals": [
-			10,
+			"10",
 		]
 	},
 	{
@@ -149,7 +149,7 @@ module.exports = [
 			}
 		],
 		"favourite_meals": [
-			25
+			"25"
 		]
 	},
 	{
@@ -168,7 +168,7 @@ module.exports = [
 			}
 		],
 		"favourite_meals": [
-			22
+			"22"
 		]
 	},
 	{
@@ -187,7 +187,7 @@ module.exports = [
 			}
 		],
 		"favourite_meals": [
-			22,
+			"22",
 		]
 	},
 	{
@@ -206,7 +206,7 @@ module.exports = [
 		}
 		],
 		"favourite_meals": [
-			24
+			"24"
 		]
 	},
 	{
@@ -259,7 +259,7 @@ module.exports = [
 		}
 		],
 		"favourite_meals": [
-			27
+			"27"
 		]
 	},
 	{
@@ -278,8 +278,8 @@ module.exports = [
 		}
 		],
 		"favourite_meals": [
-			13,
-			14
+			"13",
+			"14"
 		]
 	},
 	{
@@ -298,8 +298,8 @@ module.exports = [
 		}
 		],
 		"favourite_meals": [
-			29,
-			9
+			"29",
+			"9"
 		]
 	},
 	{
@@ -318,7 +318,7 @@ module.exports = [
 		}
 		],
 		"favourite_meals": [
-			13
+			"13"
 		]
 	},
 	{
@@ -337,8 +337,8 @@ module.exports = [
 		}
 		],
 		"favourite_meals": [
-			33,
-			21
+			"33",
+			"21"
 		]
 	},
 	{
@@ -357,9 +357,9 @@ module.exports = [
 		}
 		],
 		"favourite_meals": [
-			34,
-			4,
-			6
+			"34",
+			"4",
+			"6"
 		]
 	},
 	{
@@ -378,8 +378,8 @@ module.exports = [
 		}
 		],
 		"favourite_meals": [
-			6,
-			10
+			"6",
+			"10"
 		]
 	}
 ];

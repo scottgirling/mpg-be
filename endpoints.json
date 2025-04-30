@@ -111,5 +111,37 @@
       "recipe_img_url": "https://example.com/images/spaghetti-carbonara.jpg",
       "difficulty": 2
     }
+  },
+  "GET /api/users/:username": {
+    "description": "servers an object of a single user",
+    "queries": [],
+    "examplePath": "/api/users/chef_anna",
+    "exampleResponse": {
+      "username": "chef_anna",
+      "name": "Anna",
+      "avatar_url": "https://picsum.photos/200?random=1",
+      "meal_plans": [
+        {
+          "2025-04-21": "7",
+          "2025-04-22": "3",
+          "2025-04-23": "1",
+          "2025-04-24": "8",
+          "2025-04-25": "10",
+          "2025-04-26": "9",
+          "2025-04-27": "4"
+        },
+        {
+          "2025-05-01": "12",
+          "2025-05-02": "5",
+          "2025-05-03": "11",
+          "2025-05-04": "2"
+        }
+      ],
+      "favourite_meals": [
+        "1",
+        "10",
+        "7"
+      ]
+    }
   }
 }

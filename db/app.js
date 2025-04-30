@@ -2,11 +2,14 @@ const express = require("express");
 const getEndpoints = require("../controllers/getEndpoints");
 const getRecipes = require("../controllers/getRecipes");
 const getRecipeById = require("../controllers/getRecipeById");
+const getUserByUsername = require("../controllers/getUserByUsername");
 const app = express();
 
 app.use("/api/recipes/:recipe_id", getRecipeById);
 
 app.use("/api/recipes", getRecipes);
+
+app.use("/api/users/:username", getUserByUsername);
 
 app.use("/api", getEndpoints);
 
