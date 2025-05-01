@@ -4,6 +4,7 @@ const getRecipes = require("../controllers/getRecipes");
 const getRecipeById = require("../controllers/getRecipeById");
 const getUserByUsername = require("../controllers/getUserByUsername");
 const patchRecipeById = require("../controllers/patchRecipeById");
+const patchUserByUsername = require("../controllers/patchUserByUsername");
 const app = express();
 
 app.use(express.json());
@@ -15,6 +16,8 @@ app.get("/api/recipes", getRecipes);
 app.get("/api/users/:username", getUserByUsername);
 
 app.patch("/api/recipes/:recipe_id", patchRecipeById);
+
+app.patch("/api/users/:username", patchUserByUsername);
 
 app.use("/api", getEndpoints);
 
@@ -37,6 +40,10 @@ app.use((error, request, response, next) => {
         response.status(400).send({ msg: "Invalid request - missing field(s)." });
     }
     next(error);
+})
+
+app.use((error, request, response, next) => {
+    // console.log(error)
 })
 
 module.exports = app;
