@@ -30,7 +30,7 @@ describe("GET /api/recipes", () => {
         .get("/api/recipes")
         .expect(200)
         .then(({ body: { recipes } }) => {
-            expect(recipes.length).toBe(12);
+            expect(Array.isArray(recipes)).toBe(true);
             recipes.forEach((recipe) => {
                 expect(recipe).toHaveProperty("recipe_id", expect.any(Number));
                 expect(recipe).toHaveProperty("name", expect.any(String));
@@ -49,88 +49,152 @@ describe("GET /api/recipes", () => {
         });
     });
     describe("GET /api/recipes QUERIES", () => {
-        test("200: responds with an ordered array of recipe objects sorted by a valid column with an appropriate status code", () => {
-            return request(app)
-            .get("/api/recipes?sort_by=difficulty")
-            .expect(200)
-            .then(({ body: { recipes } }) => {
-                expect(recipes).toBeSortedBy("difficulty", { descending: true });
+        describe("sort_by", () => {
+            test("200: responds with an ordered array of recipe objects sorted by a valid column with an appropriate status code", () => {
+                return request(app)
+                .get("/api/recipes?sort_by=difficulty")
+                .expect(200)
+                .then(({ body: { recipes } }) => {
+                    expect(recipes).toBeSortedBy("difficulty", { descending: true });
+                });
             });
-        });
-        test("200: responds with an ordered array of recipe objects sorted by a default column ('created_at') when one is not specifically selected, as well as an appropriate status code", () => {
-            return request(app)
-            .get("/api/recipes")
-            .expect(200)
-            .then(({ body: { recipes } }) => {
-                expect(recipes).toBeSortedBy("created_at", { descending: true });
+            test("200: responds with an ordered array of recipe objects sorted by a default column ('created_at') when one is not specifically selected, as well as an appropriate status code", () => {
+                return request(app)
+                .get("/api/recipes")
+                .expect(200)
+                .then(({ body: { recipes } }) => {
+                    expect(recipes).toBeSortedBy("created_at", { descending: true });
+                });
             });
-        });
-        test("400: responds with an appropriate status code and error message when sorted by a non-existent column", () => {
-            return request(app)
-            .get("/api/recipes?sort_by=total_time")
-            .expect(400)
-            .then(({ body: { msg } }) => {
-                expect(msg).toBe("Invalid 'Sort By' or 'Order'. Please select a valid input.");
-            });
-        });
-        test("200: responds with an ordered array of recipe objects given the 'order' query, as well as an appropriate status code", () => {
-            return request(app)
-            .get("/api/recipes?order=asc")
-            .expect(200)
-            .then(({ body: { recipes } }) => {
-                expect(recipes).toBeSortedBy("created_at", { descending: false });
-            });
-        });
-        test("200: responds with an ordered array of recipe objects in the default order ('desc') when one is not specifically selected, as well as an appropriate status code", () => {
-            return request(app)
-            .get("/api/recipes?sort_by=prep_time")
-            .expect(200)
-            .then(({ body: { recipes } }) => {
-                expect(recipes).toBeSortedBy("prep_time", { descending: true });
-            });
-        });
-        test("400: responds with an appropriate status code and error message when ordered by a non-existent 'order' query", () => {
-            return request(app)
-            .get("/api/recipes?order=newest")
-            .expect(400)
-            .then(({ body: { msg } }) => {
-                expect(msg).toBe("Invalid 'Sort By' or 'Order'. Please select a valid input.");
-            });
-        });
-        test("200: responds with a filtered array of recipe objects when a single 'tag' is provided, as well as an appropriate status code", () => {
-            return request(app)
-            .get("/api/recipes?tags=quick")
-            .expect(200)
-            .then(({ body: { recipes } }) => {
-                recipes.forEach((recipe) => {
-                    expect(recipe.tags.includes("quick")).toBe(true);
+            test("400: responds with an appropriate status code and error message when sorted by a non-existent column", () => {
+                return request(app)
+                .get("/api/recipes?sort_by=total_time")
+                .expect(400)
+                .then(({ body: { msg } }) => {
+                    expect(msg).toBe("Invalid 'Sort By' or 'Order'. Please select a valid input.");
                 });
             });
         });
-        test("200: responds with a filtered array of recipe objects when multiple 'tags' are provided, as well as an appropriate status code", () => {
-            return request(app)
-            .get("/api/recipes?tags=quick&tags=dinner&tags=comfort-food")
-            .expect(200)
-            .then(({ body: { recipes } }) => {
-                recipes.forEach((recipe) => {
-                    expect(recipe.tags.includes("quick") || recipe.tags.includes("dinner") || recipe.tags.includes("comfort-food")).toBe(true);
+        describe("order", () => {
+            test("200: responds with an ordered array of recipe objects given the 'order' query, as well as an appropriate status code", () => {
+                return request(app)
+                .get("/api/recipes?order=asc")
+                .expect(200)
+                .then(({ body: { recipes } }) => {
+                    expect(recipes).toBeSortedBy("created_at", { descending: false });
+                });
+            });
+            test("200: responds with an ordered array of recipe objects in the default order ('desc') when one is not specifically selected, as well as an appropriate status code", () => {
+                return request(app)
+                .get("/api/recipes?sort_by=prep_time")
+                .expect(200)
+                .then(({ body: { recipes } }) => {
+                    expect(recipes).toBeSortedBy("prep_time", { descending: true });
+                });
+            });
+            test("400: responds with an appropriate status code and error message when ordered by a non-existent 'order' query", () => {
+                return request(app)
+                .get("/api/recipes?order=newest")
+                .expect(400)
+                .then(({ body: { msg } }) => {
+                    expect(msg).toBe("Invalid 'Sort By' or 'Order'. Please select a valid input.");
                 });
             });
         });
-        test("200: responds with an empty array and an appropriate status code when valid tag(s) are provided but no recipes currently exist on it", () => {
-            return request(app)
-            .get("/api/recipes?tags=mexican")
-            .expect(200)
-            .then(({ body: { recipes } }) => {
-                expect(recipes.length).toBe(0);
+        describe("tags", () => {
+            test("200: responds with a filtered array of recipe objects when a single 'tag' is provided, as well as an appropriate status code", () => {
+                return request(app)
+                .get("/api/recipes?tags=quick")
+                .expect(200)
+                .then(({ body: { recipes } }) => {
+                    recipes.forEach((recipe) => {
+                        expect(recipe.tags.includes("quick")).toBe(true);
+                    });
+                });
+            });
+            test("200: responds with a filtered array of recipe objects when multiple 'tags' are provided, as well as an appropriate status code", () => {
+                return request(app)
+                .get("/api/recipes?tags=quick&tags=dinner&tags=comfort-food")
+                .expect(200)
+                .then(({ body: { recipes } }) => {
+                    recipes.forEach((recipe) => {
+                        expect(recipe.tags.includes("quick") || recipe.tags.includes("dinner") || recipe.tags.includes("comfort-food")).toBe(true);
+                    });
+                });
+            });
+            test("200: responds with an empty array and an appropriate status code when valid tag(s) are provided but no recipes currently exist on it", () => {
+                return request(app)
+                .get("/api/recipes?tags=mexican")
+                .expect(200)
+                .then(({ body: { recipes } }) => {
+                    expect(recipes.length).toBe(0);
+                });
+            });
+            test("404: responds with an appropriate status code and error message when filtering by a 'tag' that does not yet exist", () => {
+                return request(app)
+                .get("/api/recipes?tags=chinese")
+                .expect(404)
+                .then(({ body: { msg } }) => {
+                    expect(msg).toBe("Category does not exist. Please try another.");
+                });
             });
         });
-        test("404: responds with an appropriate status code and error message when filtering by a 'tag' that does not yet exist", () => {
-            return request(app)
-            .get("/api/recipes?tags=chinese")
-            .expect(404)
-            .then(({ body: { msg } }) => {
-                expect(msg).toBe("Category does not exist. Please try another.");
+        describe("pagination", () => {
+            test("200: responds with an array of recipe objects according to the given 'limit' query, as well as an appropriate status code", () => {
+                return request(app)
+                .get("/api/recipes?limit=5")
+                .expect(200)
+                .then(({ body: { recipes } }) => {
+                    expect(recipes.length).toBe(5);
+                });
+            });
+            test("200: responds with an array of recipe objects according to the default 'limit' (10) when not otherwise specified, as well as an appropriate status code", () => {
+                return request(app)
+                .get("/api/recipes")
+                .expect(200)
+                .then(({ body: { recipes } }) => {
+                    expect(recipes.length).toBe(10);
+                });
+            });
+            test("400: responds with an appropriate status code and error message when provided with an invalid 'limit' query", () => {
+                return request(app)
+                .get("/api/recipes?limit=ten")
+                .expect(400)
+                .then(({ body: { msg } }) => {
+                    expect(msg).toBe("Invalid data type.");
+                });
+            });
+            test("200: responds with an array of recipe objects according to the given 'p' query (which specifies the page to display data for), as well as an appropriate status code", () => {
+                return request(app)
+                .get("/api/recipes?limit=5&p=3")
+                .expect(200)
+                .then(({ body: { recipes } }) => {
+                    expect(recipes.length).toBe(2);
+                });
+            });
+            test("200: responds with an array of recipe objects according to the deafult 'p' query (1) when not otherwise specified, as well as an appropriate status code", () => {
+                return request(app)
+                .get("/api/recipes")
+                .expect(200)
+                .then(({ body: { recipes } }) => {
+                    expect(recipes.length).toBe(10);
+                });
+            });
+            test("400: responds with an appropriate status code and error message when provided with an invalid 'p' query", () => {
+                return request(app)
+                .get("/api/recipes?p=one")
+                .expect(400)
+                .then(({ body: { msg } }) => {
+                    expect(msg).toBe("Invalid data type.");
+                });
+            });
+            test("404: responds with an appropriate status code and error message when provided with a valid but non-existent 'p' query", () => {
+                return request(app)
+                .get("/api/recipes?limit=5&p=35")
+                .expect(404)
+                .then(({ body: { msg } }) => {
+                    expect(msg).toBe("Page does not exist.");
+                });
             });
         });
     });
