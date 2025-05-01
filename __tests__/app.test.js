@@ -405,13 +405,117 @@ describe("PATCH /api/recipes/:recipe_id", () => {
             expect(msg).toBe("Invalid data type.");
         });
     });
-    test("404: responds with an appropriate status code and error message when a valid but non-existent 'recipe_id'", () => {
+    test("404: responds with an appropriate status code and error message when given a valid but non-existent 'recipe_id'", () => {
         return request(app)
         .patch("/api/recipes/57")
         .send({ voteChange: 1 })
         .expect(404)
         .then(({ body: { msg } }) => {
             expect(msg).toBe("Recipe does not exist.");
+        });
+    });
+});
+
+describe("PATCH /api/users/:username", () => {
+    test("200: responds with an updated user object when the 'favourite_meals' column has been added to, as well as an appropriate status code", () => {
+        return request(app)
+        .patch("/api/users/chef_anna")
+        .send({ favouriteMealChange: 2 })
+        .expect(200)
+        .then(({ body: { user } }) => {
+            const expectedOutput = {
+                "username": "chef_anna",
+                "name": "Anna",
+                "avatar_url": "https://picsum.photos/200?random=1",
+                "meal_plans": [
+                    {
+                        "2025-04-21": "7",
+                        "2025-04-22": "3",
+                        "2025-04-23": "1",
+                        "2025-04-24": "8",
+                        "2025-04-25": "10",
+                        "2025-04-26": "9",
+                        "2025-04-27": "4"
+                    },
+                    {
+                        "2025-05-01": "12",
+                        "2025-05-02": "5",
+                        "2025-05-03": "11",
+                        "2025-05-04": "2"
+                    }
+                ],
+                "favourite_meals": [
+                    "1",
+                    "10",
+                    "7",
+                    "2"
+                ]
+            };
+            expect(user.favourite_meals.length).toBe(4);
+            expect(user).toMatchObject(expectedOutput);
+        });
+    });
+    test("200: responds with an updated user object when an item has been removed from the the 'favourite_meals' column, as well as an appropriate status code", () => {
+        return request(app)
+        .patch("/api/users/chef_anna")
+        .send({ favouriteMealChange: 1 })
+        .expect(200)
+        .then(({ body: { user } }) => {
+            const expectedOutput = {
+                "username": "chef_anna",
+                "name": "Anna",
+                "avatar_url": "https://picsum.photos/200?random=1",
+                "meal_plans": [
+                    {
+                        "2025-04-21": "7",
+                        "2025-04-22": "3",
+                        "2025-04-23": "1",
+                        "2025-04-24": "8",
+                        "2025-04-25": "10",
+                        "2025-04-26": "9",
+                        "2025-04-27": "4"
+                    },
+                    {
+                        "2025-05-01": "12",
+                        "2025-05-02": "5",
+                        "2025-05-03": "11",
+                        "2025-05-04": "2"
+                    }
+                ],
+                "favourite_meals": [
+                    "10",
+                    "7"
+                ]
+            };
+            expect(user.favourite_meals.length).toBe(2);
+            expect(user).toMatchObject(expectedOutput);
+        });
+    });
+    test("400: responds with an appropriate status code and error message when the request body does not contain the correct fields", () => {
+        return request(app)
+        .patch("/api/users/chef_anna")
+        .send({})
+        .expect(400)
+        .then(({ body: { msg } }) => {
+            expect(msg).toBe("Invalid request - missing field(s).");
+        });
+    });
+    test("400: responds with an appropriate status code and error message when the request body contains an invalid 'favouriteMealChange' value", () => {
+        return request(app)
+        .patch("/api/users/chef_anna")
+        .send({ favouriteMealChange: "two" })
+        .expect(400)
+        .then(({ body: { msg } }) => {
+            expect(msg).toBe("Invalid data type.");
+        });
+    });
+    test("404: responds with an appropriate status code and error message when given a valid but non-existent 'username'", () => {
+        return request(app)
+        .patch("/api/users/chef_scott")
+        .send({ favouriteMealChange: 8 })
+        .expect(404)
+        .then(({ body: { msg } }) => {
+            expect(msg).toBe("User does not exist.");
         });
     });
 });
