@@ -300,3 +300,118 @@ describe("GET /api/users/:username", () => {
         });
     });
 });
+
+describe("PATCH /api/recipes/:recipe_id", () => {
+    test("200: responds with an updated recipe object when the 'votes' column has been incremented, as well as an appropriate status code", () => {
+        return request(app)
+        .patch("/api/recipes/1")
+        .send({ voteChange: 1 })
+        .expect(200)
+        .then(({ body: { recipe } }) => {
+            const expectedOutput = {
+                "name": "Spaghetti Carbonara",
+                "ingredients": [
+                  "200g spaghetti",
+                  "100g pancetta",
+                  "2 large eggs",
+                  "50g pecorino cheese",
+                  "2 cloves garlic",
+                  "Salt",
+                  "Black pepper"
+                ],
+                "instructions": [
+                  "Boil spaghetti in salted water.",
+                  "Fry pancetta and garlic until crispy.",
+                  "Beat eggs with cheese^ salt and pepper.",
+                  "Drain pasta and mix quickly with pancetta and egg mixture.",
+                  "Serve hot."
+                ],
+                "prep_time": "10 mins",
+                "cook_time": "20 mins",
+                "votes": 1,
+                "servings": 2,
+                "tags": ["italian", "pasta", "quick"],
+                "created_by": "chef_anna",
+                "created_at": "2025-04-23T14:00:00.000Z",
+                "recipe_img_url": "https://example.com/images/spaghetti-carbonara.jpg",
+                "difficulty": 2
+            }
+            expect(recipe.votes).toBe(1);
+            expect(recipe).toMatchObject(expectedOutput);
+        });
+    });
+    test("200: responds with an updated recipe object when the 'votes' column has been decremented, as well as an appropriate status code", () => {
+        return request(app)
+        .patch("/api/recipes/1")
+        .send({ voteChange: -1 })
+        .expect(200)
+        .then(({ body: { recipe } }) => {
+            const expectedOutput = {
+                "name": "Spaghetti Carbonara",
+                "ingredients": [
+                  "200g spaghetti",
+                  "100g pancetta",
+                  "2 large eggs",
+                  "50g pecorino cheese",
+                  "2 cloves garlic",
+                  "Salt",
+                  "Black pepper"
+                ],
+                "instructions": [
+                  "Boil spaghetti in salted water.",
+                  "Fry pancetta and garlic until crispy.",
+                  "Beat eggs with cheese^ salt and pepper.",
+                  "Drain pasta and mix quickly with pancetta and egg mixture.",
+                  "Serve hot."
+                ],
+                "prep_time": "10 mins",
+                "cook_time": "20 mins",
+                "votes": -1,
+                "servings": 2,
+                "tags": ["italian", "pasta", "quick"],
+                "created_by": "chef_anna",
+                "created_at": "2025-04-23T14:00:00.000Z",
+                "recipe_img_url": "https://example.com/images/spaghetti-carbonara.jpg",
+                "difficulty": 2
+            }
+            expect(recipe.votes).toBe(-1);
+            expect(recipe).toMatchObject(expectedOutput);
+        });
+    });
+    test("400: responds with an appropriate status code and error message when the request body does not contain the correct fields", () => {
+        return request(app)
+        .patch("/api/recipes/1")
+        .send({})
+        .expect(400)
+        .then(({ body: { msg } }) => {
+            expect(msg).toBe("Invalid request - missing field(s).");
+        });
+    });
+    test("400: responds with an appropriate status code and error message when the request body contains an invalid 'voteChange' value", () => {
+        return request(app)
+        .patch("/api/recipes/1")
+        .send({ voteChange: "one" })
+        .expect(400)
+        .then(({ body: { msg } }) => {
+            expect(msg).toBe("Invalid data type.");
+        });
+    });
+    test("400: responds with an appropriate status code and error message when given an invalid 'recipe_id'", () => {
+        return request(app)
+        .patch("/api/recipes/one")
+        .send({ voteChange: 1} )
+        .expect(400)
+        .then(({ body: { msg } }) => {
+            expect(msg).toBe("Invalid data type.");
+        });
+    });
+    test("404: responds with an appropriate status code and error message when a valid but non-existent 'recipe_id'", () => {
+        return request(app)
+        .patch("/api/recipes/57")
+        .send({ voteChange: 1 })
+        .expect(404)
+        .then(({ body: { msg } }) => {
+            expect(msg).toBe("Recipe does not exist.");
+        });
+    });
+});

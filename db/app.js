@@ -3,13 +3,18 @@ const getEndpoints = require("../controllers/getEndpoints");
 const getRecipes = require("../controllers/getRecipes");
 const getRecipeById = require("../controllers/getRecipeById");
 const getUserByUsername = require("../controllers/getUserByUsername");
+const patchRecipeById = require("../controllers/patchRecipeById");
 const app = express();
 
-app.use("/api/recipes/:recipe_id", getRecipeById);
+app.use(express.json());
 
-app.use("/api/recipes", getRecipes);
+app.get("/api/recipes/:recipe_id", getRecipeById);
 
-app.use("/api/users/:username", getUserByUsername);
+app.get("/api/recipes", getRecipes);
+
+app.get("/api/users/:username", getUserByUsername);
+
+app.patch("/api/recipes/:recipe_id", patchRecipeById);
 
 app.use("/api", getEndpoints);
 
@@ -26,5 +31,12 @@ app.use((error, request, response, next) => {
     }
     next(error);
 });
+
+app.use((error, request, response, next) => {
+    if (error.code === "23502") {
+        response.status(400).send({ msg: "Invalid request - missing field(s)." });
+    }
+    next(error);
+})
 
 module.exports = app;
