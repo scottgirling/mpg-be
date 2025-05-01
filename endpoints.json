@@ -231,7 +231,7 @@
     }
   },
   "GET /api/users/:username": {
-    "description": "servers an object of a single user",
+    "description": "serves an object of a single user",
     "queries": [],
     "examplePath": "/api/users/chef_anna",
     "exampleResponse": {
@@ -260,6 +260,40 @@
         "10",
         "7"
       ]
+    }
+  },
+  "PATCH /api/recipes/:recipe_id": {
+    "description": "serves a single recipe object with the updated 'votes' property",
+    "queries": [],
+    "exampleRequestBody": { "voteChange": 1 },
+    "examplePath": "/api/recipes/1",
+    "exampleResponse": {
+      "name": "Spaghetti Carbonara",
+      "ingredients": [
+        "200g spaghetti",
+        "100g pancetta",
+        "2 large eggs",
+        "50g pecorino cheese",
+        "2 cloves garlic",
+        "Salt",
+        "Black pepper"
+      ],
+      "instructions": [
+        "Boil spaghetti in salted water.",
+        "Fry pancetta and garlic until crispy.",
+        "Beat eggs with cheese^ salt and pepper.",
+        "Drain pasta and mix quickly with pancetta and egg mixture.",
+        "Serve hot."
+      ],
+      "prep_time": "10 mins",
+      "cook_time": "20 mins",
+      "votes": 1,
+      "servings": 2,
+      "tags": ["italian", "pasta", "quick"],
+      "created_by": "chef_anna",
+      "created_at": "2025-04-23T14:00:00.000Z",
+      "recipe_img_url": "https://example.com/images/spaghetti-carbonara.jpg",
+      "difficulty": 2
     }
   }
 }
