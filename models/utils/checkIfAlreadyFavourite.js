@@ -7,8 +7,8 @@ const checkIfAlreadyFavourite = (username, favouriteMealChange) => {
         const isAlreadyInArray = favouriteMeals.includes((favouriteMealChange.toString()));
         return isAlreadyInArray;
     })
-    .catch((error) => {
-        return error;
+    .catch(() => {
+        return Promise.reject({ status: 404, msg: "User does not exist." });
     });
 }
 
