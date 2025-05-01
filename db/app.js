@@ -21,7 +21,7 @@ app.use((error, request, response, next) => {
 });
 
 app.use((error, request, response, next) => {
-    if (error.code === "22P02") {
+    if (error.code === "22P02" || error.code === "42703") {
         response.status(400).send({ msg: "Invalid data type." });
     }
     next(error);

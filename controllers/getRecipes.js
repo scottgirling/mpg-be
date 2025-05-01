@@ -1,12 +1,16 @@
 const selectRecipes = require("../models/selectRecipes");
 const checkTagExists = require("../models/utils/checkTagsExist");
+const checkPageExists = require("../models/utils/checkPageExists");
 
 const getRecipes = (request, response, next) => {
-    const { sort_by, order, tags } = request.query;
+    const { sort_by, order, tags, limit, p } = request.query;
     if (tags) {
         checkTagExists(tags)
         .then(() => {
-            return selectRecipes(sort_by, order, tags)
+            checkPageExists(limit, p)
+        })
+        .then(() => {
+            return selectRecipes(sort_by, order, tags, limit, p)
         })
         .then((recipes) => {
             response.status(200).send({ recipes });
@@ -15,7 +19,10 @@ const getRecipes = (request, response, next) => {
             next(error);
         });
     } else {
-        selectRecipes(sort_by, order, tags)
+        checkPageExists(limit, p)
+        .then(() => {
+            return selectRecipes(sort_by, order, tags, limit, p)
+        })
         .then((recipes) => {
             response.status(200).send({ recipes });
         })
