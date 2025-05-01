@@ -42,8 +42,4 @@ app.use((error, request, response, next) => {
     next(error);
 })
 
-app.use((error, request, response, next) => {
-    // console.log(error)
-})
-
 module.exports = app;
