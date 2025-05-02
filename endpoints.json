@@ -329,5 +329,11 @@
         "2"
       ]
     }
+  },
+  "DELETE /api/recipes/:recipe_id": {
+    "description": "remove a single recipe object that relates to the 'recipe_id' and serves only the appropriate status code",
+    "queries": [],
+    "examplePath": "/api/recipes/:recipe_id",
+    "exampleResponse": "none"
   }
 }
