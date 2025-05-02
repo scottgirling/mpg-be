@@ -262,6 +262,37 @@
       ]
     }
   },
+  "GET /api/tags": {
+    "description": "serves an array of tag objects",
+    "queries": [],
+    "examplePath": "/api/tags",
+    "exampleResponse": [
+      { "slug": "appetizer" },
+      { "slug": "asian" },
+      { "slug": "baking" },
+      { "slug": "breakfast" },
+      { "slug": "comfort-food" },
+      { "slug": "dinner" },
+      { "slug": "healthy" },
+      { "slug": "indian" },
+      { "slug": "italian" },
+      { "slug": "japanese" },
+      { "slug": "lunch" },
+      { "slug": "mexican" },
+      { "slug": "noodles" },
+      { "slug": "pasta" },
+      { "slug": "quick" },
+      { "slug": "salad" },
+      { "slug": "seafood" },
+      { "slug": "snack" },
+      { "slug": "soup" },
+      { "slug": "spicy" },
+      { "slug": "sweet" },
+      { "slug": "thai" },
+      { "slug": "vegan" },
+      { "slug": "vegetarian" }
+    ]
+  },
   "PATCH /api/recipes/:recipe_id": {
     "description": "serves a single recipe object with an updated 'votes' property",
     "queries": [],

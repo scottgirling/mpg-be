@@ -301,6 +301,21 @@ describe("GET /api/users/:username", () => {
     });
 });
 
+describe("GET /api/tags", () => {
+    test("200: responds with an array of tag objects, with the appropriate property and status code", () => {
+        return request(app)
+        .get("/api/tags")
+        .expect(200)
+        .then(({ body: { tags } }) => {
+            expect(Array.isArray(tags)).toBe(true);
+            expect(tags.length).toBe(24);
+            tags.forEach((tag) => {
+                expect(tag).toHaveProperty("slug", expect.any(String));
+            });
+        });
+    });
+});
+
 describe("PATCH /api/recipes/:recipe_id", () => {
     test("200: responds with an updated recipe object when the 'votes' column has been incremented, as well as an appropriate status code", () => {
         return request(app)
