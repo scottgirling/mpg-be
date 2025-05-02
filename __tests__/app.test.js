@@ -519,3 +519,27 @@ describe("PATCH /api/users/:username", () => {
         });
     });
 });
+
+describe("DELETE /api/recipes/:recipe_id", () => {
+    test("204: removes the recipe object of the given 'recipe_id' and returns the appropriate status code", () => {
+        return request(app)
+        .delete("/api/recipes/1")
+        .expect(204)
+    });
+    test("400: responds with an appropriate status code and error message when given an invalid 'recipe_id'", () => {
+        return request(app)
+        .delete("/api/recipes/one")
+        .expect(400)
+        .then(({ body: { msg } }) => {
+            expect(msg).toBe("Invalid data type.");
+        });
+    });
+    test("404: responds with an appropriate status code and error message when given a valid but non-existent 'recipe_id'", () => {
+        return request(app)
+        .delete("/api/recipes/55")
+        .expect(404)
+        .then(({ body: { msg } }) => {
+            expect(msg).toBe("Recipe does not exist.");
+        });
+    });
+});
