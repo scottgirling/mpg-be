@@ -543,3 +543,130 @@ describe("DELETE /api/recipes/:recipe_id", () => {
         });
     });
 });
+
+describe("POST /api/recipes", () => {
+    test("201: responds with the newly created recipe object and returns the appropriate status code", () => {
+        return request(app)
+        .post("/api/recipes")
+        .send({
+            "name": "Thai Green Curry",
+            "ingredients": [
+                "400ml coconut milk",
+                "2 tbsp green curry paste",
+                "300g chicken breast, sliced",
+                "1 green bell pepper, sliced",
+                "1 zucchini, sliced",
+                "100g bamboo shoots",
+                "1 tbsp fish sauce",
+                "1 tsp brown sugar",
+                "Fresh basil leaves",
+                "Jasmine rice (to serve)"
+            ],
+            "instructions": [
+                "Heat a wok over medium heat and add a bit of coconut milk.",
+                "Stir in green curry paste and cook for 2 minutes until fragrant.",
+                "Add chicken and cook until browned.",
+                "Pour in the rest of the coconut milk and bring to a simmer.",
+                "Add bell pepper, zucchini, and bamboo shoots; cook until tender.",
+                "Season with fish sauce and brown sugar.",
+                "Stir in fresh basil before serving.",
+                "Serve hot with jasmine rice."
+            ],
+            "prep_time": "15 mins",
+            "cook_time": "20 mins",
+            "servings": 3,
+            "tags": ["thai", "curry", "spicy"],
+            "created_by": "chef_anna",
+            "recipe_img_url": "https://example.com/images/thai-green-curry.jpg",
+            "difficulty": 3
+        })
+        .expect(201)
+        .then(({ body: { recipe } }) => {
+            expect(recipe).toHaveProperty("recipe_id", expect.any(Number));
+            expect(recipe).toHaveProperty("name", expect.any(String));
+            expect(recipe).toHaveProperty("ingredients", expect.any(Array));
+            expect(recipe).toHaveProperty("instructions", expect.any(Array));
+            expect(recipe).toHaveProperty("prep_time", expect.any(String));
+            expect(recipe).toHaveProperty("cook_time", expect.any(String));
+            expect(recipe).toHaveProperty("votes", expect.any(Number));
+            expect(recipe).toHaveProperty("servings", expect.any(Number));
+            expect(recipe).toHaveProperty("tags", expect.any(Array));
+            expect(recipe).toHaveProperty("created_by", expect.any(String));
+            expect(recipe).toHaveProperty("created_at", expect.any(String));
+            expect(recipe).toHaveProperty("recipe_img_url", expect.any(String));
+            expect(recipe).toHaveProperty("difficulty", expect.any(Number));
+        });
+    });
+    test("201: responds with the newly created recipe object when the 'recipe_img_url' column has been omitted from the request body, as well as an appropriate status code", () => {
+        return request(app)
+        .post("/api/recipes")
+        .send({
+            "name": "Thai Green Curry",
+            "ingredients": [
+                "400ml coconut milk",
+                "2 tbsp green curry paste",
+                "300g chicken breast, sliced",
+                "1 green bell pepper, sliced",
+                "1 zucchini, sliced",
+                "100g bamboo shoots",
+                "1 tbsp fish sauce",
+                "1 tsp brown sugar",
+                "Fresh basil leaves",
+                "Jasmine rice (to serve)"
+            ],
+            "instructions": [
+                "Heat a wok over medium heat and add a bit of coconut milk.",
+                "Stir in green curry paste and cook for 2 minutes until fragrant.",
+                "Add chicken and cook until browned.",
+                "Pour in the rest of the coconut milk and bring to a simmer.",
+                "Add bell pepper, zucchini, and bamboo shoots; cook until tender.",
+                "Season with fish sauce and brown sugar.",
+                "Stir in fresh basil before serving.",
+                "Serve hot with jasmine rice."
+            ],
+            "prep_time": "15 mins",
+            "cook_time": "20 mins",
+            "servings": 3,
+            "tags": [],
+            "created_by": "chef_anna",
+            "difficulty": 3
+        })
+        .expect(201)
+        .then(({ body: { recipe } }) => {
+            expect(recipe.recipe_img_url).toBeNull();
+        });
+    });
+    test("400: responds with an appropriate status code and error message when the request body does not contain the correct fields", () => {
+        return request(app)
+        .post("/api/recipes")
+        .send({
+            "name": "Thai Green Curry",
+            "ingredients": [
+                "400ml coconut milk",
+                "2 tbsp green curry paste",
+                "300g chicken breast, sliced",
+                "1 green bell pepper, sliced",
+                "1 zucchini, sliced",
+                "100g bamboo shoots",
+                "1 tbsp fish sauce",
+                "1 tsp brown sugar",
+                "Fresh basil leaves",
+                "Jasmine rice (to serve)"
+            ],
+            "instructions": [
+                "Heat a wok over medium heat and add a bit of coconut milk.",
+                "Stir in green curry paste and cook for 2 minutes until fragrant.",
+                "Add chicken and cook until browned.",
+                "Pour in the rest of the coconut milk and bring to a simmer.",
+                "Add bell pepper, zucchini, and bamboo shoots; cook until tender.",
+                "Season with fish sauce and brown sugar.",
+                "Stir in fresh basil before serving.",
+                "Serve hot with jasmine rice."
+            ]
+        })
+        .expect(400)
+        .then(({ body: { msg } }) => {
+            expect(msg).toBe("Invalid request - missing field(s).");
+        });
+    });
+});
