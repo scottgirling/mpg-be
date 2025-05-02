@@ -5,6 +5,7 @@ const getRecipeById = require("../controllers/getRecipeById");
 const getUserByUsername = require("../controllers/getUserByUsername");
 const patchRecipeById = require("../controllers/patchRecipeById");
 const patchUserByUsername = require("../controllers/patchUserByUsername");
+const deleteRecipeById = require("../controllers/deleteRecipeById");
 const app = express();
 
 app.use(express.json());
@@ -18,6 +19,8 @@ app.get("/api/users/:username", getUserByUsername);
 app.patch("/api/recipes/:recipe_id", patchRecipeById);
 
 app.patch("/api/users/:username", patchUserByUsername);
+
+app.delete("/api/recipes/:recipe_id", deleteRecipeById);
 
 app.use("/api", getEndpoints);
 
