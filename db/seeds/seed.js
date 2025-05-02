@@ -36,7 +36,7 @@ const seed = ({ tagData, userData, recipeData }) => {
             cook_time VARCHAR NOT NULL,
             votes INT DEFAULT 0 NOT NULL,
             servings INT NOT NULL,
-            tags TEXT[],
+            tags TEXT[] NOT NULL,
             created_by VARCHAR REFERENCES users(username) NOT NULL,
             created_at TIMESTAMP DEFAULT NOW(),
             recipe_img_url VARCHAR,
