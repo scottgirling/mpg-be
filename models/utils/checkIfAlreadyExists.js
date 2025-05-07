@@ -1,6 +1,6 @@
 const db = require("../../db/connection");
 
-const checkIfAlreadyFavourite = (favouriteMealChange, mealPlanChange, username) => {
+const checkIfAlreadyExists = (favouriteMealChange, mealPlanChange, username) => {
     if (favouriteMealChange) {
         return db.query("SELECT favourite_meals FROM users WHERE users.username = $1", [username])
         .then(({ rows }) => {
@@ -40,4 +40,4 @@ const checkIfAlreadyFavourite = (favouriteMealChange, mealPlanChange, username) 
     }
 }
 
-module.exports = checkIfAlreadyFavourite;
+module.exports = checkIfAlreadyExists;

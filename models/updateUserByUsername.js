@@ -1,8 +1,8 @@
 const db = require("../db/connection");
-const checkIfAlreadyFavourite = require("./utils/checkIfAlreadyFavourite");
+const checkIfAlreadyExists = require("./utils/checkIfAlreadyExists");
 
 const updateUserByUsername = (favouriteMealChange, mealPlanChange, username) => {
-    return checkIfAlreadyFavourite(favouriteMealChange, mealPlanChange, username)
+    return checkIfAlreadyExists(favouriteMealChange, mealPlanChange, username)
     .then(({ isAlreadyInArray, indexOfDuplicate }) => {
         if (favouriteMealChange) {
             if (!isAlreadyInArray) {
