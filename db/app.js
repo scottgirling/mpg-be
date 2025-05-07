@@ -1,34 +1,11 @@
 const express = require("express");
-const getEndpoints = require("../controllers/getEndpoints");
-const getRecipes = require("../controllers/getRecipes");
-const getRecipeById = require("../controllers/getRecipeById");
-const getUserByUsername = require("../controllers/getUserByUsername");
-const patchRecipeById = require("../controllers/patchRecipeById");
-const patchUserByUsername = require("../controllers/patchUserByUsername");
-const deleteRecipeById = require("../controllers/deleteRecipeById");
-const postRecipe = require("../controllers/postRecipe");
-const getTags = require("../controllers/getTags");
 const app = express();
+
+const apiRouter = require("./routes/api-router");
 
 app.use(express.json());
 
-app.get("/api/recipes/:recipe_id", getRecipeById);
-
-app.get("/api/recipes", getRecipes);
-
-app.get("/api/users/:username", getUserByUsername);
-
-app.get("/api/tags", getTags);
-
-app.patch("/api/recipes/:recipe_id", patchRecipeById);
-
-app.patch("/api/users/:username", patchUserByUsername);
-
-app.delete("/api/recipes/:recipe_id", deleteRecipeById);
-
-app.post("/api/recipes", postRecipe);
-
-app.use("/api", getEndpoints);
+app.use("/api", apiRouter);
 
 app.use((error, request, response, next) => {
     if (error.status && error.msg) {
