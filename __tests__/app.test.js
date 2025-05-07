@@ -112,22 +112,20 @@ describe("GET /api/recipes", () => {
                     });
                 });
             });
-            test("200: responds with a filtered array of recipe objects when multiple 'tags' are provided, as well as an appropriate status code", () => {
-                return request(app)
-                .get("/api/recipes?tags=quick&tags=dinner&tags=comfort-food")
-                .expect(200)
-                .then(({ body: { recipes } }) => {
-                    recipes.forEach((recipe) => {
-                        expect(recipe.tags.includes("quick") || recipe.tags.includes("dinner") || recipe.tags.includes("comfort-food")).toBe(true);
-                    });
-                });
-            });
             test("200: responds with an empty array and an appropriate status code when valid tag(s) are provided but no recipes currently exist on it", () => {
                 return request(app)
                 .get("/api/recipes?tags=mexican")
                 .expect(200)
                 .then(({ body: { recipes } }) => {
                     expect(recipes.length).toBe(0);
+                });
+            });
+            test("400: responds with an appropriate status code and error message when more than one 'tag' is selected at a given time", () => {
+                return request(app)
+                .get("/api/recipes?tags=quick&tags=dinner&tags=comfort-food")
+                .expect(400)
+                .then(({ body: { msg } }) => {
+                    expect(msg).toBe("Invalid request - select a single tag.");
                 });
             });
             test("404: responds with an appropriate status code and error message when filtering by a 'tag' that does not yet exist", () => {
