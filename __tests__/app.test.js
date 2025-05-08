@@ -36,8 +36,8 @@ describe("GET /api/recipes", () => {
                 expect(recipe).toHaveProperty("name", expect.any(String));
                 expect(recipe).toHaveProperty("ingredients", expect.any(Array));
                 expect(recipe).toHaveProperty("instructions", expect.any(Array));
-                expect(recipe).toHaveProperty("prep_time", expect.any(String));
-                expect(recipe).toHaveProperty("cook_time", expect.any(String));
+                expect(recipe).toHaveProperty("prep_time", expect.any(Number));
+                expect(recipe).toHaveProperty("cook_time", expect.any(Number));
                 expect(recipe).toHaveProperty("votes", expect.any(Number));
                 expect(recipe).toHaveProperty("servings", expect.any(Number));
                 expect(recipe).toHaveProperty("tags", expect.any(Array));
@@ -52,10 +52,10 @@ describe("GET /api/recipes", () => {
         describe("sort_by", () => {
             test("200: responds with an ordered array of recipe objects sorted by a valid column with an appropriate status code", () => {
                 return request(app)
-                .get("/api/recipes?sort_by=difficulty")
+                .get("/api/recipes?sort_by=cook_time")
                 .expect(200)
                 .then(({ body: { recipes } }) => {
-                    expect(recipes).toBeSortedBy("difficulty", { descending: true });
+                    expect(recipes).toBeSortedBy("cook_time", { descending: true });
                 });
             });
             test("200: responds with an ordered array of recipe objects sorted by a default column ('created_at') when one is not specifically selected, as well as an appropriate status code", () => {
@@ -222,8 +222,8 @@ describe("GET /api/recipes/:recipe_id", () => {
                   "Drain pasta and mix quickly with pancetta and egg mixture.",
                   "Serve hot."
                 ],
-                "prep_time": "10 mins",
-                "cook_time": "20 mins",
+                "prep_time": 10,
+                "cook_time": 20,
                 "votes": 0,
                 "servings": 2,
                 "tags": ["italian", "pasta", "quick"],
@@ -335,8 +335,8 @@ describe("PATCH /api/recipes/:recipe_id", () => {
                   "Drain pasta and mix quickly with pancetta and egg mixture.",
                   "Serve hot."
                 ],
-                "prep_time": "10 mins",
-                "cook_time": "20 mins",
+                "prep_time": 10,
+                "cook_time": 20,
                 "votes": 1,
                 "servings": 2,
                 "tags": ["italian", "pasta", "quick"],
@@ -373,8 +373,8 @@ describe("PATCH /api/recipes/:recipe_id", () => {
                   "Drain pasta and mix quickly with pancetta and egg mixture.",
                   "Serve hot."
                 ],
-                "prep_time": "10 mins",
-                "cook_time": "20 mins",
+                "prep_time": 10,
+                "cook_time": 20,
                 "votes": -1,
                 "servings": 2,
                 "tags": ["italian", "pasta", "quick"],
@@ -685,8 +685,8 @@ describe("POST /api/recipes", () => {
                 "Stir in fresh basil before serving.",
                 "Serve hot with jasmine rice."
             ],
-            "prep_time": "15 mins",
-            "cook_time": "20 mins",
+            "prep_time": 15,
+            "cook_time": 20,
             "servings": 3,
             "tags": ["thai", "curry", "spicy"],
             "created_by": "chef_anna",
@@ -699,8 +699,8 @@ describe("POST /api/recipes", () => {
             expect(recipe).toHaveProperty("name", expect.any(String));
             expect(recipe).toHaveProperty("ingredients", expect.any(Array));
             expect(recipe).toHaveProperty("instructions", expect.any(Array));
-            expect(recipe).toHaveProperty("prep_time", expect.any(String));
-            expect(recipe).toHaveProperty("cook_time", expect.any(String));
+            expect(recipe).toHaveProperty("prep_time", expect.any(Number));
+            expect(recipe).toHaveProperty("cook_time", expect.any(Number));
             expect(recipe).toHaveProperty("votes", expect.any(Number));
             expect(recipe).toHaveProperty("servings", expect.any(Number));
             expect(recipe).toHaveProperty("tags", expect.any(Array));
@@ -737,8 +737,8 @@ describe("POST /api/recipes", () => {
                 "Stir in fresh basil before serving.",
                 "Serve hot with jasmine rice."
             ],
-            "prep_time": "15 mins",
-            "cook_time": "20 mins",
+            "prep_time": 15,
+            "cook_time": 20,
             "servings": 3,
             "tags": [],
             "created_by": "chef_anna",
